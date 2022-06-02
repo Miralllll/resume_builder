@@ -1,11 +1,13 @@
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
+import WorkSheet from './components/WorkSheet/WorkSheet';
+// var Latex = require("react-latex")
 
 function App() {
   return (
     <div className="App">
-      <header style={{color: "gold"}} className="web-title">
-        Resume Builder
-      </header>
+      <NavBar/>
+      <WorkSheet/>
     </div>
   );
 }

@@ -1,0 +1,8 @@
+.work-sheet {
+    padding-top: 3vh;
+    height: calc(90vh - 3.80rem);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
