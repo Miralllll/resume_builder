@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is deployed on Heroku -> (https://resumee-builder.herokuapp.com/).
 
 ## Available Scripts
 
