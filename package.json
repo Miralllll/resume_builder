@@ -10,14 +10,23 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react-latex": "^2.0.0",
     "ace-builds": "^1.5.3",
+    "buffer": "^6.0.3",
     "node-sass": "^7.0.1",
+    "placeholder": "^1.0.2",
     "react": "^18.1.0",
     "react-ace": "^10.1.0",
     "react-dom": "^18.1.0",
+    "react-full-screen": "^1.1.1",
+    "react-icons": "^4.4.0",
     "react-latex": "^2.0.0",
+    "react-loader-spinner": "^5.1.7-beta.1",
+    "react-native-childprocess": "^0.1.4",
+    "react-pdf": "^5.7.2",
     "react-scripts": "5.0.1",
     "react-simple-snackbar": "^1.1.11",
     "react-split": "^2.0.14",
+    "react-use-clipboard": "^1.0.8",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "child_process": false
   }
 }
