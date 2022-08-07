@@ -19,6 +19,7 @@ function Editor({ content, changeContent, isCompiled, updateIsCompiled}) {
         updateIsCompiled(false);
         console.log(isCompiled);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCompiled]);
 
   const handleEditorChange = (value) => {
