@@ -1,53 +1,21 @@
 .tex-editor {
-  padding-top: 8px;
+  padding-top: 4px;
   display: flex;
   flex-direction: column;
   position: relative;
   min-height: 100px;
   overflow: hidden;
-}
-
-.card-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  padding: 0 1rem;
-  height: 2.5rem;
-  width: 100%;
-  background-color: #e1e4e8;
-  color: #2b2c28;
-  text-transform: uppercase;
-}
-
-.card-title > h3 {
-  font-weight: 600;
-  margin: 0;
-}
-.card-title > .right-section {
-  height: 100%;
-}
-.card-title > a {
-  text-transform: none;
-  text-decoration: none;
+  background-color: white;
 }
 
 .tex-editor {
   width: 100%;
 }
 
-.tex-editor > textarea {
-  color: #24292e;
-  border: none;
-  background-color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 2rem;
-  font-family: "Source Code Pro", monospace;
-  width: 100%;
-  resize: none;
-  height: 100%;
+.editor {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

@@ -3,11 +3,14 @@ import Split from "react-split";
 import './workSheet.css';
 import '../Split/split.css';
 import Editor from "../Editor/Editor";
+import PDFView from "../PDFView/PDFView";
+const templete1 = "../../Data/templete1.tex"
 
 function WorkSheet() {
     const [direction, setDirection] = useState("horizontal");
-    let markdown = localStorage.getItem("markdown") || localStorage.getItem("markdown");
-    const [latex, setLatex] = useState(markdown);
+    let savedTex = localStorage.getItem("savedTex") || templete1;
+    const [latexContent, updateLatexContent] = useState(savedTex);
+    const [isCompiled, updateIsCompiled] = useState(true);
 
     useEffect(() => {
         let changeDirection = () => {
@@ -29,9 +32,12 @@ function WorkSheet() {
         >
 
         <Editor
-          content={latex}
-          changeContent={setLatex}
+            updateIsCompiled={updateIsCompiled}
+            isCompiled={isCompiled}
+            content={latexContent}
+            changeContent={updateLatexContent}
         />
+        <PDFView content={latexContent} updateIsCompiled={updateIsCompiled} />
         
         </Split>
         </div>

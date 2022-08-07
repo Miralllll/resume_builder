@@ -1,0 +1,26 @@
+.pdfContainer {
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.pdf {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 4.0rem;
+  background-color: whitesmoke;
+}
+
+.back-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
