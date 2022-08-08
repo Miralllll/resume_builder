@@ -4,32 +4,18 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
-    "@material-ui/lab": "^4.0.0-alpha.61",
-    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/react-latex": "^2.0.0",
-    "ace-builds": "^1.5.3",
-    "buffer": "^6.0.3",
-    "node-sass": "^7.0.1",
     "package-lock.json": "^1.0.0",
-    "placeholder": "^1.0.2",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-ace": "^10.1.0",
-    "react-dom": "^18.1.0",
-    "react-full-screen": "^1.1.1",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-latex": "^2.0.0",
     "react-loader-spinner": "^5.1.7-beta.1",
-    "react-native-childprocess": "^0.1.4",
-    "react-pdf": "^5.7.2",
-    "react-scripts": "5.0.1",
-    "react-simple-snackbar": "^1.1.11",
+    "react-scripts": "^5.0.1",
     "react-split": "^2.0.14",
-    "react-use-clipboard": "^1.0.8",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4",
-    "yarn.lock": "^0.0.1-security"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,8 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "browser": {
-    "child_process": false
   }
 }
