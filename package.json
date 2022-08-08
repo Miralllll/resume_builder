@@ -28,7 +28,8 @@
     "react-split": "^2.0.14",
     "react-use-clipboard": "^1.0.8",
     "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yarn.lock": "^0.0.1-security"
   },
   "scripts": {
     "start": "react-scripts start",
