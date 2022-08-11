@@ -5,7 +5,7 @@
   position: relative;
   min-height: 100px;
   overflow: hidden;
-  background-color: black;
+  background-color: white;
 }
 
 .pdf {
@@ -23,4 +23,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .pdfContainer {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .pdfContainer {
+    height: 100% !important;
+  }
 }
