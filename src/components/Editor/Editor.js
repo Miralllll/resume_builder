@@ -7,20 +7,18 @@ import "ace-builds/src-noconflict/snippets/latex";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 function Editor({ content, changeContent, isCompiled, updateIsCompiled}) {
-  const [annotations, setAnnotations] = useState([]);
+  const [annotations, updateAnnotations] = useState([]);
   const editorRef = useRef(null);
 
   useEffect(() => {
     console.log(content);
-    console.log(isCompiled);
-    if(isCompiled) {
-        console.log(isCompiled);
-        console.log("compiled");
-        updateIsCompiled(false);
-        console.log(isCompiled);
-    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCompiled]);
+
+  useEffect(() => {
+    if (content !== "") localStorage.setItem("latestLatex", content);
+    else localStorage.setItem("latestLatex", "");
+  }, [content]);
 
   const handleEditorChange = (value) => {
     changeContent(value);
@@ -41,7 +39,7 @@ function Editor({ content, changeContent, isCompiled, updateIsCompiled}) {
         editorProps={{ $blockScrolling: false }}
 
         onChange={handleEditorChange}
-        onValidate={setAnnotations}
+        onValidate={updateAnnotations}
         ref={editorRef}
         annotations={annotations}
       />

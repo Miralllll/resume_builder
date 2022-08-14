@@ -1,5 +1,5 @@
 .card-wrapper {
-  width: 100%;
+  width: calc(100% - 5.3rem);
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -18,7 +18,7 @@
     font-size: 14px;
   }
   .card-wrapper {
-    width: 100%;
+    width: calc(100% - 5.3rem);
     height: 100%;
     flex-direction: column !important;
   }

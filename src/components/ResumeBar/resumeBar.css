@@ -1,0 +1,10 @@
+.resume-bar {
+    right: 0;
+    top: 0;
+    width: 3.80rem;
+    padding-right: 1.5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}

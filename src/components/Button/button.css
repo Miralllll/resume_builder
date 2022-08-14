@@ -8,7 +8,6 @@
   display: inline-block;
   color: white;
   background-color: lightseagreen;
-  transition: white, background-color var(--color-transition);
   border: 1rem;
   transition: filter 210ms ease;
   margin: 0 0.9rem;
@@ -21,4 +20,8 @@
 .btn:focus {
   outline: none;
   filter: brightness(0.9);
+}
+
+.resume-btn {
+  margin: 0.9rem 0;
 }
