@@ -12,14 +12,15 @@ function MyComponent() {
       width: window.innerWidth
     })
     const [direction, setDirection] = useState("horizontal");
-    let savedTex = localStorage.getItem("latestLatex") || templete1;
+    let savedTex = // localStorage.getItem("latestLatex") || 
+    templete1;
     const [latexContent, updateLatexContent] = useState(savedTex);
     const [isCompiled, updateIsCompiled] = useState(true);
     const [pdfScale, updatePdfScale] = useState(0.9);
     const [splitSize, updateSplitSize] = useState([50, 50]);
 
     useEffect(() => {
-        
+        console.log(templete1);
     }, [latexContent, isCompiled]);
 
     React.useEffect(() => {

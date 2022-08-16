@@ -28,7 +28,7 @@ function PDFView({ content, updateIsCompiled, scale}) {
     console.log(content);
     const formData = new FormData();
     formData.append("pdfpdf", btoa(content));
-    var upload = fetch("/upload", 
+    var upload = fetch("http://localhost:3040/upload", 
     {
       method: "POST",
       body: formData,
