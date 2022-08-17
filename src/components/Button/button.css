@@ -1,7 +1,7 @@
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mi-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   cursor: pointer;
   font-size: 1.6rem;
   border-radius: 0.6rem;
@@ -11,17 +11,21 @@
   border: 1rem;
   transition: filter 210ms ease;
   margin: 0 0.9rem;
-  padding: 0.6rem 0.6rem 0.15rem;
+  padding: 0.6rem 0.6rem;
 }
 
-.btn:hover {
+.mi-btn:hover {
   filter: brightness(1.1);
 }
-.btn:focus {
+.mi-btn:focus {
   outline: none;
   filter: brightness(0.9);
 }
 
 .resume-btn {
-  margin: 0.9rem 0;
+  margin: 2.0rem 0;
+}
+
+.pressed-btn {
+  background-color: rgb(0, 0, 0) !important;
 }

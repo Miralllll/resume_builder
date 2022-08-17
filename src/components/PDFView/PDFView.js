@@ -73,12 +73,12 @@ return (
       <div className="pdf">
         <div className="pdf-buttons-container">
           <Tooltip title="GENERATE">
-            <button className="btn" onClick={handleGenerate}>
+            <button className="mi-btn" onClick={handleGenerate}>
               <MdLoop />
             </button>
           </Tooltip>
           <Tooltip title="PDF">
-            <button className="btn" onClick={handleDownload}>
+            <button className="mi-btn" onClick={handleDownload}>
               <CgSoftwareDownload />
             </button>
           </Tooltip>
