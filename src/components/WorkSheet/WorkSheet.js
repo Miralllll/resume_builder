@@ -5,9 +5,10 @@ import '../Split/split.css';
 import Editor from "../Editor/Editor";
 import PDFView from "../PDFView/PDFView";
 import ResumeBar from "../ResumeBar/ResumeBar"
+import DatePickerLCL from "../SectionElement/Elements/DatePicker";
 
 import formJSON from "../../JSONData/formElement.json";
-import Section from "../Section/Section"; 
+import SectionElement from "../SectionElement/SectionElement"; 
 import ScrollBars from 'react-custom-scrollbars';
 
 const templete1 = '\\documentclass[12pt]{article}\\usepackage[utf8]{inputenc}\\title{Name}\\author{Job}\\begin{document}\\maketitle\\section{Work Experience}\\subsection{Data Scientist}\\end{document}'
@@ -35,7 +36,7 @@ function MyComponent(sectionNumber) {
         console.log(section);
     }, [sectionNumber]);
 
-    const {fields, section_label} = section?? {};
+    const {fields, section_label, size} = section?? {};
 
     React.useEffect(() => {
         function handleResize() {
@@ -76,8 +77,24 @@ function MyComponent(sectionNumber) {
             return <div className="container-second">
                         <h3>{section_label}</h3>
                         <form>
-                        {console.log(fields)}
-                        {fields? fields.map((field, i) => <Section key={i} field={field}/>) : null}
+                        {(() => {
+                            const items = [];
+                            for(var i = 0, sz = size; i < sz ; i++) {
+                                const innerItems = [];
+                                var field = fields[i];
+                                console.log(field.field_label);
+                                innerItems.push(<SectionElement key={i} field={fields[i]}/>);
+                                if(field.field_label === "Website" || field.field_label === "Summary") {
+                                    items.push(<div className="row">{innerItems}</div>);
+                                } else if(i % 2 === 0) {
+                                    if(i !== sz - 1 && (fields[i+1].field_label !== "Website" && fields[i+1].field_label !== "Summary")) {
+                                        innerItems.push(<SectionElement key={i+1} field={fields[i+1]}/>);
+                                    }
+                                    items.push(<div className="row">{innerItems}</div>);
+                                }
+                            };
+                            return items;
+                        })()}
                         </form>
                     </div>
         })()}

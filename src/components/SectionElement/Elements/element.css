@@ -1,0 +1,11 @@
+.MuiInputBase-input, .MuiSvgIcon-root {
+    color: white !important;
+}
+
+.MuiPickersToolbar-toolbar, .MuiPickersDay-daySelected {
+    background-color: black !important;
+}
+
+.MuiPickersYear-yearSelected {
+    color: black !important;
+}

@@ -3,7 +3,7 @@ import React from "react";
 const Select = ({field_id, field_label, field_options}) => {
 
     return (
-        <div className="mb-3">
+        <div className="mb-3 col-6">
             <label htmlFor="exampleInput" className="form-label">{field_label}</label>
             <select id={field_id} className="form-select" aria-label="Default select example">
                 {
