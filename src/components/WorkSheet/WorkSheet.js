@@ -4,8 +4,8 @@ import './workSheet.css';
 import '../Split/split.css';
 import Editor from "../Editor/Editor";
 import PDFView from "../PDFView/PDFView";
-import ResumeBar from "../ResumeBar/ResumeBar"
-import DatePickerLCL from "../SectionElement/Elements/DatePicker";
+import ResumeBar from "../ResumeBar/ResumeBar";
+import PlusButton from "../Button/PlusButton";
 
 import formJSON from "../../JSONData/formElement.json";
 import SectionElement from "../SectionElement/SectionElement"; 
@@ -98,6 +98,7 @@ function MyComponent(sectionNumber) {
                         </form>
                     </div>
         })()}
+        <PlusButton></PlusButton>
         </ScrollBars>
         <PDFView className="w-full h-full md:h-screen" 
         content={latexContent} updateIsCompiled={updateIsCompiled} scale={pdfScale}/>

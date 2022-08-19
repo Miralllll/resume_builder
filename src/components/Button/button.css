@@ -14,9 +14,22 @@
   padding: 0.6rem 0.6rem;
 }
 
+.plus-btn {
+  background-color: transparent;
+  color: lightseagreen;
+  font-size: 2.6rem;
+}
+
+.minus-btn {
+  background-color: transparent;
+  color: rgb(213, 29, 29);
+  font-size: 2.6rem;
+}
+
 .mi-btn:hover {
   filter: brightness(1.1);
 }
+
 .mi-btn:focus {
   outline: none;
   filter: brightness(0.9);
