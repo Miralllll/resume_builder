@@ -32,6 +32,10 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
         return (
             <div>
                 {sectionBoxes.length !== 0 ? sectionBoxes.map((sectionBoxCurr, index) => {
+                    if(sectionNumber===0 && index===1) {
+                        fields = [fields[size - 2], fields[size - 1]];
+                        size = 2;
+                    }
                     return (
                     <div key={Object.keys(sectionBoxCurr)[0]} >
                         <SectionBox

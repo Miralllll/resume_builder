@@ -18,6 +18,7 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
         var secCopy = sectionBox;
         secCopy[field_id] = sectionElem;
         updateSectionBox(secCopy);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionElem]);
 
     switch (field_type) {

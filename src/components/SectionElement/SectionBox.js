@@ -15,6 +15,7 @@ const SectionBox = ({sectionBoxes, updateSectionBoxes, fields, size, index, actu
         var list = [...sectionBoxes];
         list[index][actualIndex] = sectionBox;
         updateSectionBoxes(list);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionBox]);
 
     return (

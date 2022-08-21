@@ -36,6 +36,7 @@ function WorkSheet() {
         console.log(templete1);
         console.log(JSON.stringify(allSectionData));
         updateIsCompiled(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [latexContent, isCompiled]);
 
     useEffect(() => {
