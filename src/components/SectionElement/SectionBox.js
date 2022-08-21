@@ -43,7 +43,7 @@ const SectionBox = ({sectionBoxes, updateSectionBoxes, fields, size, index, actu
                                                     field={fields[i+1]} />);
                                 i++;
                             }
-                            items.push(<div key={i+1} className="row">{innerItems}</div>);
+                            items.push(<div key={i} className="row">{innerItems}</div>);
                         }
                     };
                     return items;

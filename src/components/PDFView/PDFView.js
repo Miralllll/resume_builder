@@ -58,9 +58,9 @@ function PDFView({ content, updateIsCompiled, scale}) {
   }
 
   const handleGenerate = () => {
-    updateIsLoading(true);
+    // updateIsLoading(true);
     updateIsCompiled(true);
-    requestPDF();
+    // requestPDF();
   };
 
 return (

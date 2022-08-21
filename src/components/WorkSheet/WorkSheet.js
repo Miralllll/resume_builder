@@ -32,7 +32,10 @@ function WorkSheet() {
     const [allSectionData, updateAllSectionData] = useState([[{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}]]);
 
     useEffect(() => {
+        if(!isCompiled) return;
         console.log(templete1);
+        console.log(JSON.stringify(allSectionData));
+        updateIsCompiled(false);
     }, [latexContent, isCompiled]);
 
     useEffect(() => {
