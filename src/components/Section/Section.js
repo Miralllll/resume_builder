@@ -16,6 +16,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
             data[sectionNumber] = sectionBoxes;
 
             updateAllSectionData(data);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [sectionBoxes]);
 
         useEffect(() => {
@@ -26,6 +27,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
             list.splice(removePressed[1]-1, 1);
             updateSectionBoxes(list);
             updateRemovePressed(false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [removePressed]);
 
 
