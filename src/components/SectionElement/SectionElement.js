@@ -36,15 +36,18 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             field_id={field_id}
             field_label={field_label}
             field_options={field_options}
+            field_value={val}
             // sectionElem={sectionElem} 
-            // updateSectionElem={updateSectionElem}
+            updateSectionElem={updateSectionElem}
         />)
         case "date":
         return (<DatePickerLCL
             field_id={field_id}
             field_label={field_label}
+            field_value={val}
             // sectionElem={sectionElem} 
             // updateSectionElem={updateSectionElem}
+            updateSectionElem={updateSectionElem}
         />)
         default:
             return null;
