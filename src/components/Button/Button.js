@@ -14,7 +14,6 @@ function Button ({title, dataKey, updateSectionNumber, sectionNumber}) {
     const [isActive, setIsActive] = useState(sectionNumber === dataKey? true:false);
 
     const handleSectionButton = (dataKey) => {
-        console.log(dataKey);
         setIsActive(true);
         updateSectionNumber(dataKey);
     };

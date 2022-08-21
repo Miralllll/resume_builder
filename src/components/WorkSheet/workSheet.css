@@ -12,6 +12,12 @@
 }
 
 .container-second {
-    padding: 3vh;
+    padding: 4.5vh 3vh;
+}
+
+h2 {
+    font-family: grapenuts;
+    letter-spacing: .2rem;
+    color: #d7d3cb;
 }
 

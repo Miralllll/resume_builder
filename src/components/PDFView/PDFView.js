@@ -25,7 +25,6 @@ function PDFView({ content, updateIsCompiled, scale}) {
 
   const requestPDF = () => {
     const content = localStorage.getItem("latestLatex");
-    console.log(content);
     const formData = new FormData();
     formData.append("pdfpdf", btoa(content));
     var upload = fetch("http://localhost:3040/upload", 
@@ -35,14 +34,12 @@ function PDFView({ content, updateIsCompiled, scale}) {
     });
     upload = upload.then((response) => 
     {
-      console.log("1");
       updateIsLoading(false);
       if(response.ok) return response.blob();
       return response.json();
     });
     upload = upload.then((response) => 
     {
-      console.log("2");
       if(response.error) {
         updateMidJsonRes(response.error);
         throw new Error();
@@ -50,7 +47,6 @@ function PDFView({ content, updateIsCompiled, scale}) {
       return response;
     });
     upload.then((response) => {
-      console.log("3");
       var rd = new FileReader();
       rd.onloadend = () => {
         var cdData = rd.result;
@@ -65,7 +61,6 @@ function PDFView({ content, updateIsCompiled, scale}) {
     updateIsLoading(true);
     updateIsCompiled(true);
     requestPDF();
-    console.log(content + "in view");
   };
 
 return (

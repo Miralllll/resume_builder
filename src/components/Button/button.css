@@ -7,7 +7,7 @@
   border-radius: 0.6rem;
   display: inline-block;
   color: white;
-  background-color: lightseagreen;
+  background-color: #20b2aa;
   border: 1rem;
   transition: filter 210ms ease;
   margin: 0 0.9rem;
@@ -22,7 +22,7 @@
 
 .minus-btn {
   background-color: transparent;
-  color: rgb(213, 29, 29);
+  color: #df4d55;
   font-size: 2.6rem;
 }
 

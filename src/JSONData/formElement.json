@@ -8,16 +8,14 @@
                 "field_label": "Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "headline",
                 "field_label": "Headline",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Headline",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "email",
@@ -69,8 +67,7 @@
                 "field_label": "Work Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Work Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "work_position",
@@ -116,8 +113,7 @@
                 "field_label": "Institution Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Institution Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "degree",
@@ -177,8 +173,7 @@
                 "field_label": "Project Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Project Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "project_description",
@@ -224,8 +219,7 @@
                 "field_label": "Award Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Award Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "award_description",
@@ -265,8 +259,7 @@
                 "field_label": "Skill Name",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Skill Name",
-                "field_type": "text",
-                "field_value": ""
+                "field_type": "text"
             },
             {
                 "field_id": "skill_level",
