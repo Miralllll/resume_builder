@@ -29,7 +29,13 @@ function WorkSheet() {
 
     const [sectionNumber, updateSectionNumber] = useState(0);
     const [section, updateSection] = useState(formJSON[sectionNumber]);
-    const [allSectionData, updateAllSectionData] = useState([[{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}], [{ "1" : {}}]]);
+    var list = []; 
+    formJSON.map((sec) => {
+        const {section_label} = sec?? {};
+        var chngArr = [{[section_label] : [{ "1" : {}}]}];
+        list.push(chngArr);
+    });
+    const [allSectionData, updateAllSectionData] = useState(list);
 
     useEffect(() => {
         if(!isCompiled) return;
@@ -39,11 +45,16 @@ function WorkSheet() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [latexContent, isCompiled]);
 
+    const {fields, section_label, size} = section?? {};
+
     useEffect(() => {
         updateSection(formJSON[sectionNumber]);
+        const {section_label} = section?? {};
+        var allSectionDataCopy = [...allSectionData];
+        var chngArr = [{[section_label] : [{ "1" : {}}]}];
+        allSectionDataCopy[sectionNumber] = chngArr;
+        updateAllSectionData(allSectionDataCopy);
     }, [sectionNumber]);
-
-    const {fields, section_label, size} = section?? {};
 
     useEffect(() => {
         function handleResize() {

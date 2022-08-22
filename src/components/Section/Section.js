@@ -3,9 +3,12 @@ import SectionBox from "../SectionElement/SectionBox";
 import PlusButton from "../Button/PlusButton";
 
 const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, size}) => {
-        const [sectionBoxes, updateSectionBoxes] = useState(allSectionData[sectionNumber]);
+        const [sectionBoxes, updateSectionBoxes] = useState(allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]]);
         const firstUpdate = useRef(true);
         const [removePressed, updateRemovePressed] = useState([false, -1]);
+
+        var fieldsCopy = fields;
+        var sizeCopy = size;
 
         useEffect(() => {
             if(firstUpdate.current) {
@@ -13,7 +16,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                 return;
             }
             var data = allSectionData;
-            data[sectionNumber] = sectionBoxes;
+            allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]] = sectionBoxes;
 
             updateAllSectionData(data);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,10 +36,11 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
 
         return (
             <div>
+                {console.log(JSON.stringify(allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]]))}
                 {sectionBoxes.length !== 0 ? sectionBoxes.map((sectionBoxCurr, index) => {
-                    if(sectionNumber===0 && index===1) {
-                        fields = [fields[size - 2], fields[size - 1]];
-                        size = 2;
+                    if(sectionNumber===0 && index===1 && size >= 2) {
+                        fieldsCopy = [fields[size - 2], fields[size - 1]];
+                        sizeCopy = 2;
                     }
                     return (
                     <div key={Object.keys(sectionBoxCurr)[0]} >
@@ -44,8 +48,8 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                             key={index  + 1}
                             sectionBoxes={sectionBoxes} 
                             updateSectionBoxes={updateSectionBoxes} 
-                            fields={fields} 
-                            size={size}
+                            fields={fieldsCopy} 
+                            size={sizeCopy}
                             index={index}
                             actualIndex={Object.keys(sectionBoxCurr)[0]}
                         >
