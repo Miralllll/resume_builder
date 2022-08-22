@@ -49,11 +49,6 @@ function WorkSheet() {
 
     useEffect(() => {
         updateSection(formJSON[sectionNumber]);
-        const {section_label} = section?? {};
-        var allSectionDataCopy = [...allSectionData];
-        var chngArr = [{[section_label] : [{ "1" : {}}]}];
-        allSectionDataCopy[sectionNumber] = chngArr;
-        updateAllSectionData(allSectionDataCopy);
     }, [sectionNumber]);
 
     useEffect(() => {
