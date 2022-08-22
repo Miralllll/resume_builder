@@ -4,6 +4,7 @@ import { MdLoop } from "react-icons/md";
 import { Tooltip } from "@material-ui/core";
 import { Oval } from  'react-loader-spinner';
 import { Document, pdfjs, Page } from "react-pdf";
+import {Base64} from "js-base64";
 
 import './pdfView.css'
 import '../Button/button.css'
@@ -26,7 +27,7 @@ function PDFView({ content, updateIsCompiled, scale}) {
   const requestPDF = () => {
     const content = localStorage.getItem("latestLatex");
     const formData = new FormData();
-    formData.append("pdfpdf", btoa(content));
+    formData.append("pdfpdf", Base64.encode(content));
     var upload = fetch("http://localhost:3040/upload", 
     {
       method: "POST",
@@ -58,9 +59,9 @@ function PDFView({ content, updateIsCompiled, scale}) {
   }
 
   const handleGenerate = () => {
-    // updateIsLoading(true);
+    updateIsLoading(true);
     updateIsCompiled(true);
-    // requestPDF();
+    requestPDF();
   };
 
 return (

@@ -20,7 +20,7 @@ function WorkSheet() {
       width: window.innerWidth
     })
     const [direction, setDirection] = useState("horizontal");
-    let savedTex = // localStorage.getItem("latestLatex") || 
+    let savedTex = localStorage.getItem("latestLatex") || 
     templete1;
     const [latexContent, updateLatexContent] = useState(savedTex);
     const [isCompiled, updateIsCompiled] = useState(true);
