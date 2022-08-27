@@ -17,10 +17,13 @@
   right: 0;
   top: 0;
   width: 100%;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   height: 4.0rem;
-  background-color: rgb(239, 238, 235);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #202020;
 }
 
 .pdf-buttons-container {
@@ -56,24 +59,24 @@
   }
 }
 
-.all-pdf-display {
-  width: 100%;
-  background-color: var(--body-color);
-  transition: background-color var(--color-transition);
-  overflow-y: scroll;
-  height: 100%;
-}
-
 .pdf-display-container {
   width: 100%;
   display: flex;
   background-color: whitesmoke;
   height: calc(100% - 4.0rem);
+  position: absolute;
+  top: 4.0rem;
+  left: 0;
 }
 
-.document, .document-wrapper {
+.pdf-display-container {
+  overflow-y: scroll;
+  max-height: 100%;
   width: 100%;
-  display: flex;
+}
+
+.document-wrapper {
+  width: 100%;
   height: calc(100%);
 }
 
@@ -86,5 +89,41 @@ Page {
 .error-latex {
   color: black;
   padding: 4.0rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Blue */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.view-fullscreen {
+  margin-top: 0;
+  height: 100%;
+}
+
+.view-fullscreen-document {
+  padding: 2rem 6rem;
+}
+
+canvas {
+  width: calc(100%) !important;
+  height: auto !important;
+}
+
+.view-fullscreen > canvas {
+  width: calc(100% - 4rem) !important;
+}
+
+.page {
+  width: 100%;
+  display: inline-block;
+}
+
+.document {
+  width: 100% !important;
 }
 

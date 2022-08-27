@@ -2,27 +2,36 @@ import {React, useState, useEffect} from "react";
 import { CgSoftwareDownload } from "react-icons/cg";
 import { MdLoop } from "react-icons/md";
 import { Tooltip } from "@material-ui/core";
-import { Oval } from  'react-loader-spinner';
 import { Document, pdfjs, Page } from "react-pdf";
 import {Base64} from "js-base64";
-
-import './pdfView.css'
-import '../Button/button.css'
+import Spinner from "../Spinner/Spinner";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { Grid  } from '@material-ui/core';
+// import { FontAwesomeIcon } from "AiFillCloseCircle";
+import './pdfView.css';
+import '../Button/button.css';
 // PDF viewer to display pdf not in localy
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
-function PDFView({ content, updateIsCompiled, scale}) {
+function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   const [isLoading, updateIsLoading] = useState(false);
   const [midJsonRes, updateMidJsonRes] = useState({});
   const [midFile, updateMidFile] = useState("");
+  const handler = useFullScreenHandle();
   useEffect(() => {
     handleGenerate();
   }, []);
 
   const handleDownload = () => {
-    // download
+    let link = document.createElement("a");
+    link.href = midFile;
+    link.download = "ResumePDF.pdf";
+    link.click();
   };
+
+  const handleFullScreen = () => handler.active ? handler.exit() : handler.enter();
 
   const requestPDF = () => {
     const content = localStorage.getItem("latestLatex");
@@ -56,12 +65,46 @@ function PDFView({ content, updateIsCompiled, scale}) {
       };
       rd.readAsDataURL(response);
     }).catch((error) => console.log(error));
-  }
+  };
+
+  const requestFromJSON = () => {
+    const formData = new FormData();
+    formData.append("json", Base64.encode(jsonContent));
+    var upload = fetch("http://localhost:3040/sendJson", 
+    {
+      method: "POST",
+      body: formData,
+    });
+    upload = upload.then((response) => 
+    {
+      updateIsLoading(false);
+      if(response.ok) return response.blob();
+      return response.json();
+    });
+    upload = upload.then((response) => 
+    {
+      if(response.error) {
+        updateMidJsonRes(response.error);
+        throw new Error();
+      }
+      return response;
+    });
+    upload.then((response) => {
+      var rd = new FileReader();
+      rd.onloadend = () => {
+        var cdData = rd.result;
+        updateMidJsonRes("");
+        updateMidFile(cdData);
+      };
+      rd.readAsDataURL(response);
+    }).catch((error) => console.log(error));
+  };
 
   const handleGenerate = () => {
     updateIsLoading(true);
     updateIsCompiled(true);
     requestPDF();
+    //requestFromJSON();
   };
 
 return (
@@ -80,16 +123,14 @@ return (
           </Tooltip>
         </div>
       </div>
-      <div id="preview" className="pdf-display-container">
-        <div className="all-pdf-display">
+      <FullScreen handle={handler}>
+      <div id="preview" className={`pdf-display-container ${ handler.active ? "view-fullscreen" : ""}`} onClick={handleFullScreen}>
+        {/* <div className="all-pdf-display"> */}
         {(() => {
           if (isLoading) {
             return (
             <div className="back-container">
-              <Oval color = {"lightseagreen"}
-                    height = {60}
-                    width = {60}
-                    radius = {20}/>
+              <Spinner/>
             </div>
             );
           }
@@ -98,9 +139,25 @@ return (
           if (Object.keys(midFile).length !== 0)
             return (
               <div className="document-wrapper">
+                <div
+          style={{
+            height: "auto",
+          }}
+        >
+          {handler.active && (
+                  <Grid container justify="flex-end">
+                    <button onClick={handler.exit} className="mi-btn exit-button">
+                      {/* <FontAwesomeIcon 
+                      // icon={AiFillCloseCircle}
+                      /> */}
+                      <AiFillCloseCircle/>
+                    </button>
+                  </Grid>
+                )}
+        </div>
                 <Document
                     file={midFile}
-                    className="document"
+                    className={`document ${ handler.active ? "view-fullscreen-document" : ""}`}
                   >
                       <Page
                         renderTextLayer={false}
@@ -108,13 +165,16 @@ return (
                         pageNumber={1}
                         scale={scale}
                         className="page"
+                        width={1300}
+                        height={1300}
                       /> 
                   </Document>
               </div>
             );
         })()}
         </div>
-      </div>
+      {/* </div> */}
+      </FullScreen>
     </div>
   );
 }

@@ -56,7 +56,7 @@ function WorkSheet() {
             if(window.innerWidth < 600) {
                 setDirection("vertical");
                 updatePdfScale(0.7);
-                updateSplitSize([45, 55]);
+                updateSplitSize([100, 50]);
             }
             else {
                 setDirection("horizontal");
@@ -107,7 +107,9 @@ function WorkSheet() {
                     }
                 </ScrollBars>
                 <PDFView className="w-full h-full md:h-screen" 
-                content={latexContent} updateIsCompiled={updateIsCompiled} scale={pdfScale}/>
+                content={latexContent} 
+                jsonContent={allSectionData}
+                updateIsCompiled={updateIsCompiled} scale={pdfScale}/>
             </Split>
     </div>
     ;

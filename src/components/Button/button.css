@@ -6,23 +6,36 @@
   font-size: 1.6rem;
   border-radius: 0.6rem;
   display: inline-block;
-  color: white;
-  background-color: #20b2aa;
+  color: #202020;
+  background-color: #ffdf6c;
   border: 1rem;
   transition: filter 210ms ease;
   margin: 0 0.9rem;
   padding: 0.6rem 0.6rem;
 }
 
+.exit-button {
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  border-radius: 3rem;
+  padding: 0.3rem 0.3rem;
+  display: flex;
+  position: relative;
+  margin: 0 0 !important;
+  color: #202020;
+  background-color: #ffffff;
+}
+
 .plus-btn {
   background-color: transparent;
-  color: lightseagreen;
+  color: #707070;
   font-size: 2.6rem;
 }
 
 .minus-btn {
   background-color: transparent;
-  color: #df4d55;
+  color: #ffdf6c;
   font-size: 2.6rem;
 }
 
@@ -40,5 +53,6 @@
 }
 
 .pressed-btn {
-  background-color: rgb(0, 0, 0) !important;
+  background-color: #202020 !important;
+  color: #ffffff !important;
 }

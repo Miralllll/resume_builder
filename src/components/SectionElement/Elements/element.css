@@ -9,3 +9,7 @@
 .MuiPickersYear-yearSelected {
     color: black !important;
 }
+
+.MuiInput-underline:after {
+    border-bottom: 2px solid #ffffff;
+}

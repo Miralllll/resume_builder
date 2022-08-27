@@ -18,6 +18,23 @@
 h2 {
     font-family: grapenuts;
     letter-spacing: .2rem;
-    color: #d7d3cb;
+    color: #ffffff;
 }
+
+
+@media screen and (max-width: 600px) {
+    .work-sheet {
+        padding-top: 3vh;
+        height: calc(120vh - 3.80rem);
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100px;
+        overflow: hidden;
+    }
+    
+  }
 
