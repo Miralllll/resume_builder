@@ -10,10 +10,8 @@ import { Grid  } from '@material-ui/core';
 import formJSON from "../../JSONData/formElement.json";
 import Section from "../Section/Section"; 
 import ScrollBars from 'react-custom-scrollbars';
-
-const templete1 = '\\documentclass[12pt]{article}\\usepackage[utf8]{inputenc}\\title{Name}\\author{Job}\\begin{document}\\maketitle\\section{Work Experience}\\subsection{Data Scientist}\\end{document}'
-
-
+const {templete1} = require('../../Data/templete1');
+  
 function WorkSheet() {
 
     React.useState({ 
@@ -29,13 +27,14 @@ function WorkSheet() {
 
     const [sectionNumber, updateSectionNumber] = useState(0);
     const [section, updateSection] = useState(formJSON[sectionNumber]);
-    var list = []; 
+    var list = {}; 
     formJSON.map((sec) => {
         const {section_label} = sec?? {};
-        var chngArr = [{[section_label] : [{ "1" : {}}]}];
-        list.push(chngArr);
+        var ls = {...list, [section_label] : [{ "1" : {}}]};
+        list = ls;
     });
     const [allSectionData, updateAllSectionData] = useState(list);
+    console.log(allSectionData);
 
     useEffect(() => {
         if(!isCompiled) return;
@@ -106,6 +105,7 @@ function WorkSheet() {
                     </div>
                     }
                 </ScrollBars>
+                {/* <div className="w-full h-full md:h-screen" ></div> */}
                 <PDFView className="w-full h-full md:h-screen" 
                 content={latexContent} 
                 jsonContent={allSectionData}

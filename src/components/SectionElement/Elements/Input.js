@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const Input = ({field_id, field_label, field_placeholder, field_value, updateSectionElem}) => {
+const Input = ({field_id, field_label, field_placeholder, field_value, display_full_line, updateSectionElem}) => {
     const firstUpdate = useRef(null);
 
     const handleSectionElementChange = (e) => {
@@ -8,7 +8,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, updateSec
     };
 
     return (
-        <div className={field_label === "Summary" || field_label === "Website" ? "mb-3 col-12": "mb-3 col-6"}>
+        <div className={`mb-3 ${ display_full_line === "no" ? "col-6" : "col-12"}`}>
             <label htmlFor="exampleInput" className="form-label">{field_label}</label>
             {field_label !== "Summary" &&
             <input type="text" className="form-control" id={field_id} aria-describedby="Help"

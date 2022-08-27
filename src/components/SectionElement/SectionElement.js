@@ -3,7 +3,7 @@ import Input from "./Elements/Input";
 import Select from "./Elements/Select";
 import DatePickerLCL from "./Elements/DatePicker";
 
-function SectionElement ({index, sectionBox, updateSectionBox, field: {field_type, field_id, field_label, field_placeholder, field_value, field_options}}) {
+function SectionElement ({index, sectionBox, updateSectionBox, field: {field_type, field_id, field_label, field_placeholder, field_value, field_options, display_full_line}}) {
     const { [field_id]: vl } = sectionBox;
     const val = vl;
     const [sectionElem, updateSectionElem] = useState(val);
@@ -30,6 +30,7 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             field_placeholder={field_placeholder}
             field_value={val}
             // sectionElem={sectionElem}
+            display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
         />)
         case "select":
@@ -39,6 +40,7 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             field_options={field_options}
             field_value={val}
             // sectionElem={sectionElem} 
+            display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
         />)
         case "date":
@@ -48,6 +50,7 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             field_value={val}
             // sectionElem={sectionElem} 
             // updateSectionElem={updateSectionElem}
+            display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
         />)
         default:

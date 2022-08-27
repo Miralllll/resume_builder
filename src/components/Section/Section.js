@@ -3,12 +3,14 @@ import SectionBox from "../SectionElement/SectionBox";
 import PlusButton from "../Button/PlusButton";
 
 const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, size}) => {
-        const [sectionBoxes, updateSectionBoxes] = useState(allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]]);
+        const [sectionBoxes, updateSectionBoxes] = useState(allSectionData[Object.keys(allSectionData)[sectionNumber]]);
         const firstUpdate = useRef(true);
         const [removePressed, updateRemovePressed] = useState([false, -1]);
 
         var fieldsCopy = fields;
         var sizeCopy = size;
+        console.log(sectionBoxes);
+        console.log(JSON.stringify(sectionBoxes))
 
         useEffect(() => {
             if(firstUpdate.current) {
@@ -16,7 +18,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                 return;
             }
             var data = allSectionData;
-            allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]] = sectionBoxes;
+            allSectionData[Object.keys(allSectionData)[sectionNumber]] = sectionBoxes;
 
             updateAllSectionData(data);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,7 +38,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
 
         return (
             <div>
-                {console.log(JSON.stringify(allSectionData[sectionNumber][0][Object.keys(allSectionData[sectionNumber][0])[0]]))}
+                {console.log(allSectionData[Object.keys(allSectionData)[sectionNumber]])}
                 {sectionBoxes.length !== 0 ? sectionBoxes.map((sectionBoxCurr, index) => {
                     if(sectionNumber===0 && index===1 && size >= 2) {
                         fieldsCopy = [fields[size - 2], fields[size - 1]];

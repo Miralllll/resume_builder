@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const Select = ({field_id, field_label, field_options, field_value, updateSectionElem}) => {
+const Select = ({field_id, field_label, field_options, field_value, display_full_line, updateSectionElem}) => {
 
     const firstUpdate = useRef(null);
 
@@ -9,7 +9,7 @@ const Select = ({field_id, field_label, field_options, field_value, updateSectio
     };
 
     return (
-        <div className="mb-3 col-6">
+        <div className={`mb-3 ${ display_full_line === "no" ? "col-6" : "col-12"}`}>
             <label htmlFor="exampleInput" className="form-label">{field_label}</label>
             <select id={field_id} className="form-select" aria-label="Default select example" defaultValue={field_value} ref={firstUpdate} onChange={(e) => {handleSectionElementChange(e)}}>
                 {

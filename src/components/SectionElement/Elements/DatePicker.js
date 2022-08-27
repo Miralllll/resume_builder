@@ -3,7 +3,7 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker} from '@material-ui/pickers
 import { Grid  } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
 import "./element.css";
-const DatePickerLCL = ({field_label, field_value, updateSectionElem}) => {
+const DatePickerLCL = ({field_label, field_value, display_full_line, updateSectionElem}) => {
     const [date, setSelectedDate] = React.useState(field_value?new Date(field_value):
         Date().toLocaleString() + ""
         // new Date("2021-09-11T12:00:00")
@@ -15,7 +15,7 @@ const DatePickerLCL = ({field_label, field_value, updateSectionElem}) => {
     };
 
     return (
-        <div className="mb-3 col-6">
+        <div className={`mb-3 ${ display_full_line === "no" ? "col-6" : "col-12"}`}>
             <label htmlFor="exampleDatePicker" className="date-label">{field_label}</label>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Grid container >

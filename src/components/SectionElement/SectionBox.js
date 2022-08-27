@@ -32,10 +32,10 @@ const SectionBox = ({sectionBoxes, updateSectionBoxes, fields, size, index, actu
                                             sectionBox={sectionBox} 
                                             updateSectionBox={updateSectionBox}
                                             field={fields[i]} />);
-                        if(field.field_label === "Website" || field.field_label === "Summary") {
+                        if(field.display_full_line === "yes") {
                             items.push( <div key={i} className="row">{innerItems}</div>);
                         } else if(i % 2 === 0) {
-                            if(i !== sz - 1 && (fields[i+1].field_label !== "Website" && fields[i+1].field_label !== "Summary")) {
+                            if(i !== sz - 1 && (fields[i+1].display_full_line === "no")) {
                                 innerItems.push(<SectionElement
                                                     key={i+1}
                                                     index={i+1}
