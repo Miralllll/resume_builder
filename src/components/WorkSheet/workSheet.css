@@ -11,6 +11,17 @@
     overflow: hidden;
 }
 
+.starter-work-sheet {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
 .container-second {
     padding: 4.5vh 3vh;
 }
@@ -22,10 +33,10 @@ h2 {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1120px) {
     .work-sheet {
-        padding-top: 3vh;
-        height: calc(120vh - 3.80rem);
+        padding-top: 3vh !important;
+        height: calc(90vh - 3.80rem);
         margin: auto;
         display: flex;
         flex-direction: row;
@@ -34,7 +45,18 @@ h2 {
         width: 100%;
         min-height: 100px;
         overflow: hidden;
-    }
+    } 
     
-  }
+    .starter-work-sheet {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100px;
+        overflow: hidden;
+        min-width: 200px;
+    }
+}
 

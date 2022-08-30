@@ -4,7 +4,7 @@ import SectionElement from "./SectionElement";
 const SectionBox = ({sectionBoxes, updateSectionBoxes, fields, size, index, actualIndex}) => {
 
     const [sectionBox, updateSectionBox] = new useState(sectionBoxes[index][actualIndex]);
-
+    console.log(JSON.stringify(sectionBoxes[index][actualIndex]) + " " + index + " " + actualIndex);
     const firstUpdate = useRef(true);
 
     useEffect(() => {
@@ -23,29 +23,48 @@ const SectionBox = ({sectionBoxes, updateSectionBoxes, fields, size, index, actu
             <form>
                 {(() => {
                     const items = [];
-                    for(var i = 0, sz = size; i < sz ; i++) {
-                        const innerItems = [];
-                        var field = fields[i];
-                        innerItems.push(<SectionElement
-                                            key={i} 
-                                            index={i}
-                                            sectionBox={sectionBox} 
-                                            updateSectionBox={updateSectionBox}
-                                            field={fields[i]} />);
-                        if(field.display_full_line === "yes") {
+                    for(var i = 0, sz = size; i < sz ;) {
+                        while(i < sz && fields[i].display_full_line === "yes") {
+                            const innerItems = [];
+                            innerItems.push(<SectionElement
+                                                key={i} 
+                                                index={i}
+                                                sectionBox={sectionBox} 
+                                                updateSectionBox={updateSectionBox}
+                                                field={fields[i]} 
+                                                isMainPage={"noo"}/>);
                             items.push( <div key={i} className="row">{innerItems}</div>);
-                        } else if(i % 2 === 0) {
-                            if(i !== sz - 1 && (fields[i+1].display_full_line === "no")) {
-                                innerItems.push(<SectionElement
-                                                    key={i+1}
-                                                    index={i+1}
+                            i++;
+                        };
+                        var iterator = 0;
+                        while(i < sz && fields[i].display_full_line === "no") {
+                            const hereItems = [];
+                            hereItems.push(<SectionElement
+                                key={i} 
+                                index={i}
+                                sectionBox={sectionBox} 
+                                updateSectionBox={updateSectionBox}
+                                field={fields[i]} 
+                                isMainPage={"noo"}/>);
+                            iterator++;
+                            if(iterator % 2 === 0) {
+                                items.push( <div key={i++} className="row">{hereItems}</div>);
+                                continue;
+                            }
+                            i++;
+                            if(i !== sz && (fields[i].display_full_line === "no")) {
+                                hereItems.push(<SectionElement
+                                                    key={i}
+                                                    index={i}
                                                     sectionBox={sectionBox} 
                                                     updateSectionBox={updateSectionBox}
-                                                    field={fields[i+1]} />);
+                                                    field={fields[i]} 
+                                                    isMainPage={"noo"}/>);
+                                items.push( <div key={i} className="row">{hereItems}</div>);
                                 i++;
+                                iterator++;
                             }
-                            items.push(<div key={i} className="row">{innerItems}</div>);
-                        }
+                        };
                     };
                     return items;
                 })()}

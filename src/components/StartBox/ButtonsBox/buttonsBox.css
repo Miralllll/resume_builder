@@ -1,0 +1,39 @@
+h4 {
+    margin-bottom: 0 !important;
+}
+
+.child-starter-img {
+    display: block;
+    max-width: 380px;
+    width: auto !important;
+}
+
+
+.starter-button {
+    width: 100%;
+    margin: 0 0 !important;
+}
+
+.starter-next > .logo-title{
+    font-size: 1.0rem !important;
+    line-height: 20px;
+}
+
+.starter-next {
+    min-width: 100px !important;
+}
+
+
+@media screen and (max-width: 1120px) {
+    .child-starter-img {
+        max-width: 200px !important;
+    }
+    h4 {
+        font-size: calc(0.6rem + .15vw);
+    }
+}
+@media screen and (max-width: 600px) {
+    .starter-button {
+        min-width: 200px;
+    }
+}

@@ -18,7 +18,14 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                 return;
             }
             var data = allSectionData;
-            allSectionData[Object.keys(allSectionData)[sectionNumber]] = sectionBoxes;
+            if(sectionNumber === 1) {
+                var firstBox = allSectionData[Object.keys(allSectionData)[sectionNumber]][0];
+                console.log(firstBox);
+                var newFirstBox = sectionBoxes[0];
+                // firstBox[firstBox.length() - 2] = newFirstBox[0];
+                // firstBox[firstBox.length() - 1] = newFirstBox[1];
+            }
+            allSectionData[Object.keys(allSectionData)[sectionNumber]] = [firstBox, ...sectionBoxes];
 
             updateAllSectionData(data);
         // eslint-disable-next-line react-hooks/exhaustive-deps

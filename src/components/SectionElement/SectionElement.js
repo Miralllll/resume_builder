@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Input from "./Elements/Input";
 import Select from "./Elements/Select";
 import DatePickerLCL from "./Elements/DatePicker";
+import StartButton from "../StartBox/Buttons/StartButton";
+import { Grid  } from '@material-ui/core';
 
-function SectionElement ({index, sectionBox, updateSectionBox, field: {field_type, field_id, field_label, field_placeholder, field_value, field_options, display_full_line}}) {
+function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumber, field: {field_type, field_id, field_label, field_placeholder, field_options, display_full_line}, isMainPage, starterNumber, isChanged, updateIsChanged}) {
     const { [field_id]: vl } = sectionBox;
     const val = vl;
     const [sectionElem, updateSectionElem] = useState(val);
-
+    console.log(JSON.stringify(sectionBox) + " " + JSON.stringify(sectionElem));
+    index = !isNaN(field_id)? Number(field_id) : field_id;
     const firstUpdate = useRef(true);
 
     useEffect(() => {
@@ -17,24 +20,49 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
         }
         var secCopy = sectionBox;
         secCopy[field_id] = sectionElem;
+        console.log(sectionElem);
         updateSectionBox(secCopy);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionElem]);
 
+
+    const wrapperr = (scriptt) => {
+        if (isMainPage === "no")
+            return <Grid container justifyContent="center">{scriptt}</Grid>;
+        return scriptt;
+    }
+
     switch (field_type) {
-        case "text":
-        return (<Input
+        case "text":      
+        return (wrapperr(
+            <Input
             key={index}
             field_id={field_id}
             field_label={field_label}
             field_placeholder={field_placeholder}
             field_value={val}
+            field_type={field_type}
+            sectionEl={sectionElem}
+            display_full_line={display_full_line}
+            updateSectionElem={updateSectionElem}
+            isMainPage={isMainPage}
+        />))
+        case "password":      
+        return (wrapperr(
+            <Input
+            key={index}
+            field_id={field_id}
+            field_label={field_label}
+            field_placeholder={field_placeholder}
+            field_value={val}
+            field_type={field_type}
             // sectionElem={sectionElem}
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
-        />)
+            isMainPage={isMainPage}
+        />))
         case "select":
-        return (<Select
+        return (wrapperr(<Select
             field_id={field_id}
             field_label={field_label}
             field_options={field_options}
@@ -42,9 +70,10 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             // sectionElem={sectionElem} 
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
-        />)
+            isMainPage={isMainPage}
+        />))
         case "date":
-        return (<DatePickerLCL
+        return (wrapperr(<DatePickerLCL
             field_id={field_id}
             field_label={field_label}
             field_value={val}
@@ -52,7 +81,21 @@ function SectionElement ({index, sectionBox, updateSectionBox, field: {field_typ
             // updateSectionElem={updateSectionElem}
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
-        />)
+            isMainPage={isMainPage}
+        />))
+        case "button":
+        return (wrapperr(
+        <StartButton
+            key={index}
+            dataKey={index}
+            sectionNumber={starterNumber} 
+            updateSectionNumber={updateSectionNumber}
+            title={field_label}
+            isMainPage={isMainPage}
+            // updateStarterNumber={handleClick}
+            // isCurrPageChanged={isChanged}
+            // updateIsPageChanged={updateIsChanged}
+        />))
         default:
             return null;
     };

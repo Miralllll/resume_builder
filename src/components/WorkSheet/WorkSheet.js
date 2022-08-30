@@ -52,16 +52,16 @@ function WorkSheet() {
 
     useEffect(() => {
         function handleResize() {
-            if(window.innerWidth < 600) {
-                setDirection("vertical");
-                updatePdfScale(0.7);
-                updateSplitSize([100, 50]);
-            }
-            else {
-                setDirection("horizontal");
-                updatePdfScale(0.9);
-                updateSplitSize([60, 40]);
-            }
+        if(window.innerWidth < 600) {
+            setDirection("vertical");
+            updatePdfScale(0.7);
+            updateSplitSize([100, 50]);
+        }
+        else {
+            setDirection("horizontal");
+            updatePdfScale(0.9);
+            updateSplitSize([60, 40]);
+        }
         }
         window.addEventListener('resize', handleResize)
         return _ => {
@@ -100,7 +100,8 @@ function WorkSheet() {
                         updateAllSectionData={updateAllSectionData}
                         sectionNumber={sectionNumber} 
                         fields={fields} 
-                        size={size}>
+                        size={size}
+                        isMainPage={"noo"}>
                         </Section>
                     </div>
                     }

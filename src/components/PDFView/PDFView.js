@@ -8,7 +8,6 @@ import Spinner from "../Spinner/Spinner";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Grid  } from '@material-ui/core';
-// import { FontAwesomeIcon } from "AiFillCloseCircle";
 import './pdfView.css';
 import '../Button/button.css';
 // PDF viewer to display pdf not in localy
@@ -67,44 +66,54 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
     }).catch((error) => console.log(error));
   };
 
+
+  function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+  }
   const requestFromJSON = () => {
-    const formData = new FormData();
-    formData.append("json", Base64.encode(jsonContent));
-    var upload = fetch("http://localhost:3040/sendJson", 
-    {
-      method: "POST",
-      body: formData,
-    });
-    upload = upload.then((response) => 
-    {
-      updateIsLoading(false);
-      if(response.ok) return response.blob();
-      return response.json();
-    });
-    upload = upload.then((response) => 
-    {
-      if(response.error) {
-        updateMidJsonRes(response.error);
-        throw new Error();
-      }
-      return response;
-    });
-    upload.then((response) => {
-      var rd = new FileReader();
-      rd.onloadend = () => {
-        var cdData = rd.result;
-        updateMidJsonRes("");
-        updateMidFile(cdData);
-      };
-      rd.readAsDataURL(response);
-    }).catch((error) => console.log(error));
+    fetch('http://localhost:3040/send',{
+      body:JSON.stringify(jsonContent),
+      method:'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      
+    }).then((res)=>res.json()).then((data)=>console.log(data));
+    // upload = upload.then((response) => 
+    // {
+    //   updateIsLoading(false);
+    //   if(response.ok) return response.blob();
+    //   return response.json();
+    // });
+    // upload = upload.then((response) => 
+    // {
+    //   if(response.error) {
+    //     updateMidJsonRes(response.error);
+    //     throw new Error();
+    //   }
+    //   return response;
+    // });
+    // upload.then((response) => {
+    //   var rd = new FileReader();
+    //   rd.onloadend = () => {
+    //     var cdData = rd.result;
+    //     updateMidJsonRes("");
+    //     updateMidFile(cdData);
+    //   };
+    //   rd.readAsDataURL(response);
+    // }).catch((error) => console.log(error));
   };
 
   const handleGenerate = () => {
     updateIsLoading(true);
     updateIsCompiled(true);
     requestPDF();
-    //requestFromJSON();
+    // requestFromJSON();
   };
 
 return (

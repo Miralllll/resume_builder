@@ -1,13 +1,14 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import WorkSheet from './components/WorkSheet/WorkSheet';
-// var Latex = require("react-latex")
+import StartBoxWrapper from './components/StartBox/StartBoxWrapper';
+import React from "react";
 
 function App() {
+  
   return (
     <div className="App">
       <NavBar/>
-      <WorkSheet/>
+      <StartBoxWrapper></StartBoxWrapper>
     </div>
   );
 }
