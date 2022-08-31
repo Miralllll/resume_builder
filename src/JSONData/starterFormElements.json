@@ -35,8 +35,16 @@
     },
     {
         "section_label": "Sign Up",
-        "size": 2,
+        "size": 3,
         "fields": [
+            {
+                "field_id": "name",
+                "field_label": "Name",
+                "field_mandatory": "yes",
+                "field_placeholder": "Enter Name",
+                "field_type": "text",
+                "display_full_line": "yes"
+            },
             {
                 "field_id": "email",
                 "field_label": "Email",
@@ -47,7 +55,7 @@
             },
             {
                 "field_id": "password",
-                "field_label": "",
+                "field_label": "Password",
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Password",
                 "field_type": "password",

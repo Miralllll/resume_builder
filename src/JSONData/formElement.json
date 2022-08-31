@@ -1,322 +1,322 @@
 [
-    {
-        "section_label": "General Information",
-        "size": 7,
-        "fields": [
-            {
-                "field_id": "first_name",
-                "field_label": "First Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter First Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "Last_name",
-                "field_label": "Last Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Last Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "headline",
-                "field_label": "Headline",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Headline",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "email",
-                "field_label": "Email",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Email",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "mobile_contact",
-                "field_label": "Contact",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Contact Number",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "media",
-                "field_label": "Media",
-                "field_value": "Linkedin",
-                "field_mandatory": "no",
-                "field_options": [
-                    {
-                        "option_label": "Linkedin"
-                    },
-                    {
-                        "option_label": "Github"
-                    },
-                    {
-                        "option_label": "Instagram"
-                    }
-                ],
-                "field_type": "select",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "media_field",
-                "field_label": "Media Link",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Contact Number",
-                "field_type": "text",
-                "display_full_line": "no"
-            }
-        ]
-    },
-    {
-        "section_label": "Work Experience",
-        "size": 6,
-        "fields": [
-            {
-                "field_id": "work_name",
-                "field_label": "Work Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Work Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "work_position",
-                "field_label": "Work Position",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Work Position",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "work_start_date",
-                "field_label": "Start Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "work_end_date",
-                "field_label": "End Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "work_website",
-                "field_label": "Website",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Work Website",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "work_summary",
-                "field_label": "Summary",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Work Summary",
-                "field_type": "text",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Education",
-        "size": 8,
-        "fields": [
-            {
-                "field_id": "institution_name",
-                "field_label": "Institution Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Institution Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "degree",
-                "field_label": "Degree",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Degree",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "area_of_study",
-                "field_label": "Area of Study",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Area of Study",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "grade",
-                "field_label": "Grade",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Grade",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "institution_start_date",
-                "field_label": "Start Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "institution_end_date",
-                "field_label": "End Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "institution_website",
-                "field_label": "Website",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Institution Website",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "institution_summary",
-                "field_label": "Summary",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Institution Summary",
-                "field_type": "text",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Projects",
-        "size": 6,
-        "fields": [
-            {
-                "field_id": "project_name",
-                "field_label": "Project Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Project Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "project_description",
-                "field_label": "Description",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Project Description",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "project_start_date",
-                "field_label": "Start Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "project_end_date",
-                "field_label": "End Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "project_website",
-                "field_label": "Website",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Project Website",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "project_summary",
-                "field_label": "Summary",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Project Summary",
-                "field_type": "text",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Awards",
-        "size": 5,
-        "fields": [
-            {
-                "field_id": "award_name",
-                "field_label": "Award Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Award Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "award_description",
-                "field_label": "Description",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Award Description",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "award_date",
-                "field_label": "Date",
-                "field_mandatory": "yes",
-                "field_type": "date",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "award_website",
-                "field_label": "Website",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Award Website",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "award_summary",
-                "field_label": "Summary",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Award Summary",
-                "field_type": "text",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Skills",
-        "size": 3,
-        "fields": [
-            {
-                "field_id": "skill_name",
-                "field_label": "Skill Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Skill Name",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "skill_level",
-                "field_label": "Level",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter Skill Level",
-                "field_type": "text",
-                "display_full_line": "no"
-            },
-            {
-                "field_id": "skill_explained",
-                "field_label": "More About Skill",
-                "field_mandatory": "no",
-                "field_placeholder": "Enter More About Skill",
-                "field_type": "text",
-                "display_full_line": "yes"
-            }
-        ]
-    }
+  {
+    "section_label": "General Information",
+    "size": 7,
+    "fields": [
+      {
+        "field_id": "first_name",
+        "field_label": "First Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter First Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "Last_name",
+        "field_label": "Last Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Last Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "headline",
+        "field_label": "Headline",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Headline",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "email",
+        "field_label": "Email",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Email",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "mobile_contact",
+        "field_label": "Contact",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Contact Number",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "media",
+        "field_label": "Media",
+        "field_value": "Linkedin",
+        "field_mandatory": "no",
+        "field_options": [
+          {
+            "option_label": "Linkedin"
+          },
+          {
+            "option_label": "Github"
+          },
+          {
+            "option_label": "Instagram"
+          }
+        ],
+        "field_type": "select",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "media_field",
+        "field_label": "Media Link",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Contact Number",
+        "field_type": "text",
+        "display_full_line": "no"
+      }
+    ]
+  },
+  {
+    "section_label": "Work Experience",
+    "size": 6,
+    "fields": [
+      {
+        "field_id": "work_name",
+        "field_label": "Work Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Work Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "work_position",
+        "field_label": "Work Position",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Work Position",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "work_start_date",
+        "field_label": "Start Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "work_end_date",
+        "field_label": "End Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "work_website",
+        "field_label": "Website",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Work Website",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "work_summary",
+        "field_label": "Summary",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Work Summary",
+        "field_type": "text",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Education",
+    "size": 8,
+    "fields": [
+      {
+        "field_id": "institution_name",
+        "field_label": "Institution Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Institution Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "degree",
+        "field_label": "Degree",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Degree",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "area_of_study",
+        "field_label": "Area of Study",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Area of Study",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "grade",
+        "field_label": "Grade",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Grade",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "institution_start_date",
+        "field_label": "Start Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "institution_end_date",
+        "field_label": "End Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "institution_website",
+        "field_label": "Website",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Institution Website",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "institution_summary",
+        "field_label": "Summary",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Institution Summary",
+        "field_type": "text",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Projects",
+    "size": 6,
+    "fields": [
+      {
+        "field_id": "project_name",
+        "field_label": "Project Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Project Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "project_description",
+        "field_label": "Description",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Project Description",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "project_start_date",
+        "field_label": "Start Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "project_end_date",
+        "field_label": "End Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "project_website",
+        "field_label": "Website",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Project Website",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "project_summary",
+        "field_label": "Summary",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Project Summary",
+        "field_type": "text",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Awards",
+    "size": 5,
+    "fields": [
+      {
+        "field_id": "award_name",
+        "field_label": "Award Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Award Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "award_description",
+        "field_label": "Description",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Award Description",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "award_date",
+        "field_label": "Date",
+        "field_mandatory": "yes",
+        "field_type": "date",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "award_website",
+        "field_label": "Website",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Award Website",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "award_summary",
+        "field_label": "Summary",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Award Summary",
+        "field_type": "text",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Skills",
+    "size": 3,
+    "fields": [
+      {
+        "field_id": "skill_name",
+        "field_label": "Skill Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Skill Name",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "skill_level",
+        "field_label": "Level",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter Skill Level",
+        "field_type": "text",
+        "display_full_line": "no"
+      },
+      {
+        "field_id": "skill_explained",
+        "field_label": "More About Skill",
+        "field_mandatory": "no",
+        "field_placeholder": "Enter More About Skill",
+        "field_type": "text",
+        "display_full_line": "yes"
+      }
+    ]
+  }
 ]
