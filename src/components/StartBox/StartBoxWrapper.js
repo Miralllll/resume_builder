@@ -5,8 +5,7 @@ import formJSON from "../../JSONData/starterFormElements.json";
 import WorkSheet from "../WorkSheet/WorkSheet";
 
 
-const StartBoxWrapper = () => {
-    const [sectionNumber, updateSectionNumber] = useState(-1);
+const StartBoxWrapper = ({sectionNumber, updateSectionNumber}) => {
     const [section, updateSection] = useState(undefined);
     const firstUpdate = useRef(true);
 
@@ -25,50 +24,43 @@ const StartBoxWrapper = () => {
             return;
         }
         if(sectionNumber === -1) {
-            console.log("zirooo");
             updateSection(undefined);
         };
         updateSection(formJSON[sectionNumber]);
-        console.log(section);
     }, [sectionNumber]);
 
     const {fields, section_label, size} = section?? {};
-    console.log(fields + " " + section_label + " " + size);
 
 
-    return (
-        <div>
-            {
-            (sectionNumber !== 2) &&
+    return (<>
+                {sectionNumber !== 2 && <>
+                {(sectionNumber === -1) &&
                 <div className="work-sheet">
-                    {console.log("sectionnum" + sectionNumber)}
-                    {
-                    (sectionNumber === -1)  && 
-                    
-                    <div key={sectionNumber} className="starter-work-sheet"> 
-                    {console.log([...Object.keys(allSectionData)])}
-                            <ButtonsBox 
-                                key = {sectionNumber}
-                                section_labels={[...Object.keys(allSectionData)]} 
-                                sectionNumber={sectionNumber}
-                                updateSectionNumber={updateSectionNumber}
-                            >
-                            </ButtonsBox>
+                    <ButtonsBox 
+                        key = {sectionNumber}
+                        section_labels={[...Object.keys(allSectionData)]} 
+                        sectionNumber={sectionNumber}
+                        updateSectionNumber={updateSectionNumber}
+                    ></ButtonsBox>
                 </div>
-            }
-            <StartBox 
-            allSectionData={allSectionData}
-            updateAllSectionData={updateAllSectionData}
-            sectionNumber={sectionNumber + 1}
-            updateSectionNumber={updateSectionNumber}
-            size={size}
-            fields={fields}
-            section_label={section_label}
-            ></StartBox>
-        </div>
-    }
-    {sectionNumber === 2 && <WorkSheet/>}
-    </div>
+                }
+                {(sectionNumber === 1 || sectionNumber === 0) &&
+                    <div className="starter-work-sheet">
+                    <StartBox 
+                    key = {sectionNumber}
+                    allSectionData={allSectionData}
+                    updateAllSectionData={updateAllSectionData}
+                    sectionNumber={sectionNumber}
+                    updateSectionNumber={updateSectionNumber}
+                    size={size}
+                    fields={fields}
+                    section_label={section_label}
+                    ></StartBox>
+                    </div>
+                }
+                </>}
+                {sectionNumber === 2 && <WorkSheet/>}
+    </>
     );
 };
 

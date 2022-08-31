@@ -6,6 +6,7 @@ h4 {
     display: block;
     max-width: 380px;
     width: auto !important;
+    object-fit: scale-down;
 }
 
 

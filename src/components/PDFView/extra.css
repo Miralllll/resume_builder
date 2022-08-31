@@ -1,0 +1,104 @@
+
+.pdf-display-container > p {
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+  
+  .pdf-display-container > a {
+    color: var(--link-color);
+  }
+  .pdf-display-container > a :hover {
+    filter: brightness(1.2);
+  }
+  .pdf-display-container > hr {
+    border: none;
+    height: 0.187rem;
+    margin: 1.5rem 0;
+    background-color: var(--body-accent-color);
+    transition: background-color var(--color-transition);
+  }
+  
+  .pdf-display-container > pre {
+    transition: background-color var(--color-transition);
+    line-height: 1.45;
+    padding: 0.8em;
+    overflow: auto;
+    border-radius: 6px;
+    font-size: 0.9em;
+    padding: 1rem;
+    width: 100%;
+    overflow: auto;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .pdf-display-container > :not(pre) > code {
+    font-size: 85%;
+    border-radius: 0.3em;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    transition: color var(--color-transition);
+    transition: background-color var(--color-transition);
+  }
+  .pdf-display-container > code {
+    font-family: var(--source-code-font);
+  }
+  
+  .pdf-display-container > li + li {
+    margin-top: 0.25em;
+  }
+  .pdf-display-container > blockquote {
+    border-left: 0.312em solid var(--body-accent-color);
+    transition: border-color var(--color-transition);
+    padding-left: 1rem;
+  }
+  .pdf-display-container > img {
+    max-width: 100%;
+  }
+  .pdf-display-container > h1 {
+    margin: 1.5rem 0 1rem;
+    line-height: 1.33;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--body-accent-color);
+    transition: border-color var(--color-transition);
+  }
+  .pdf-display-container > h2 {
+    margin: 1.5rem 0 1rem;
+    line-height: 1.33;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--body-accent-color);
+    transition: border-color var(--color-transition);
+  }
+  .pdf-display-container > h3 {
+    margin: 1.5rem 0 1rem;
+    line-height: 1.33;
+  }
+  .pdf-display-container > h4 {
+    margin: 1.5rem 0 1rem;
+    line-height: 1.33;
+  }
+  .pdf-display-container > table {
+    border-collapse: collapse;
+    margin: 1.5rem 0.5rem;
+  }
+  
+  .pdf-display-container > th, td {
+    border: 0.08rem solid var(--table-border-color);
+    transition: border-color var(--color-transition);
+    text-align: left;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+  }
+  
+  .pdf-display-container > tr:nth-child(even) {
+    background-color: var(--alternate-table-color);
+    transition: background-color var(--color-transition);
+  }
+  
+  .pdf-display-container > th {
+    background-color: var(--primary-color);
+    transition: background-color var(--color-transition);
+    color: white;
+  }
+  .pdf-display-container > summary:focus {
+    outline: none;
+  }

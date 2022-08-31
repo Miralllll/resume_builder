@@ -1,13 +1,21 @@
 [
     {
         "section_label": "General Information",
-        "size": 6,
+        "size": 7,
         "fields": [
             {
-                "field_id": "english_name",
-                "field_label": "Name",
+                "field_id": "first_name",
+                "field_label": "First Name",
                 "field_mandatory": "yes",
-                "field_placeholder": "Enter Name",
+                "field_placeholder": "Enter First Name",
+                "field_type": "text",
+                "display_full_line": "no"
+            },
+            {
+                "field_id": "Last_name",
+                "field_label": "Last Name",
+                "field_mandatory": "yes",
+                "field_placeholder": "Enter Last Name",
                 "field_type": "text",
                 "display_full_line": "no"
             },
@@ -17,7 +25,7 @@
                 "field_mandatory": "yes",
                 "field_placeholder": "Enter Headline",
                 "field_type": "text",
-                "display_full_line": "no"
+                "display_full_line": "yes"
             },
             {
                 "field_id": "email",

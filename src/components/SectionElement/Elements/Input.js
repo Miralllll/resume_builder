@@ -1,8 +1,8 @@
-import React, { useRef, useState, useCallback } from "react";
-const Input = ({field_id, field_label, field_placeholder, field_value, display_full_line, updateSectionElem, isMainPage}) => {
+import React, { useRef, useState, useCallback, useEffect } from "react";
+const Input = ({field_id, field_label, field_placeholder, field_value, display_full_line, updateSectionElem, isMainPage, errors}) => {
     const firstUpdate = useRef(null);
     const [val, setValue] = useState("");
-
+    
     const handleSectionElementChange = (e) => {
         if(isMainPage === "noo")
             updateSectionElem(firstUpdate.current.value);
@@ -13,27 +13,14 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
         setValue(e.target.value);
         handleSectionElementChange(e);
      }, [setValue]);
-     
-    // var inputProps = {
-    //     value: val,
-    //     onChange: handleInputChange
-    // };
 
-    // var inputPropsSec = {
-    //     value: field_value,
-    //     onChange: handleSectionElementChange,
-    //     ref: firstUpdate
-    // };
-
-    // if(isMainPage === "noo") var needed = inputPropsSec;
-    // else needed = inputProps;
 
     return (
         <div className={`mb-4 ${ display_full_line === "no" ? "col-6" : ""} ${ isMainPage === "no" ? "col-12" : ""}`}>
             
             <label htmlFor={field_label} className="form-label" style={({color: `${ isMainPage === "no" ? "#707070" : ""}`})}>{field_label}</label>
             {field_label !== "Summary" && (isMainPage === "noo" &&
-            <input type="text" 
+            <input type={field_id}
             className="form-control" 
             id={field_id} 
             aria-describedby="Help"
@@ -42,7 +29,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
             defaultValue={field_value}
             onChange={(e) => {handleSectionElementChange(e)}}/>)}
             {field_label !== "Summary" && (isMainPage !== "noo" &&
-            <input type="text" 
+            <input type={field_id} 
             className="form-control" 
             id={field_id} 
             value={val}
@@ -51,6 +38,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
             onChange={handleInputChange}/>)}
             {field_label === "Summary" && (isMainPage === "noo" &&
                 <textarea
+                type={field_id}
                 className="form-control"
                 aria-describedby="Help"
                 ref={firstUpdate}
@@ -63,6 +51,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
             )}
             {field_label === "Summary" && (isMainPage !== "noo" &&
                 <textarea
+                type={field_id}
                 className="form-control"
                 aria-describedby="Help"
                 onChange={handleInputChange}
@@ -72,7 +61,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
                 rows={4}
                 />
             )}
-            <div className={`error ${ field_label } `}></div>
+            <div className={`error ${ field_label } `}>{errors !== undefined?errors[`${field_id}`]: ''}</div>
         </div>
     );
 };

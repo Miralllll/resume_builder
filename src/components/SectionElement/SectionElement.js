@@ -5,11 +5,10 @@ import DatePickerLCL from "./Elements/DatePicker";
 import StartButton from "../StartBox/Buttons/StartButton";
 import { Grid  } from '@material-ui/core';
 
-function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumber, field: {field_type, field_id, field_label, field_placeholder, field_options, display_full_line}, isMainPage, starterNumber, isChanged, updateIsChanged}) {
+function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSectionNumber, field: {field_type, field_id, field_label, field_placeholder, field_options, display_full_line}, isMainPage, starterNumber}) {
     const { [field_id]: vl } = sectionBox;
     const val = vl;
     const [sectionElem, updateSectionElem] = useState(val);
-    console.log(JSON.stringify(sectionBox) + " " + JSON.stringify(sectionElem));
     index = !isNaN(field_id)? Number(field_id) : field_id;
     const firstUpdate = useRef(true);
 
@@ -20,23 +19,24 @@ function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumb
         }
         var secCopy = sectionBox;
         secCopy[field_id] = sectionElem;
-        console.log(sectionElem);
         updateSectionBox(secCopy);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionElem]);
 
 
     const wrapperr = (scriptt) => {
-        if (isMainPage === "no")
+        if (isMainPage === "no"){
             return <Grid container justifyContent="center">{scriptt}</Grid>;
+        }
         return scriptt;
     }
 
     switch (field_type) {
         case "text":      
-        return (wrapperr(
+        return (
+            // wrapperr(
             <Input
-            key={index}
+            key = {index}
             field_id={field_id}
             field_label={field_label}
             field_placeholder={field_placeholder}
@@ -46,11 +46,15 @@ function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumb
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
-        />))
+            errors={errors}
+        />
+        // )
+        )
         case "password":      
-        return (wrapperr(
+        return (
+            //wrapperr(
             <Input
-            key={index}
+            key = {index}
             field_id={field_id}
             field_label={field_label}
             field_placeholder={field_placeholder}
@@ -60,7 +64,9 @@ function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumb
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
-        />))
+            errors={errors}
+        />)
+        // )
         case "select":
         return (wrapperr(<Select
             field_id={field_id}
@@ -86,7 +92,6 @@ function SectionElement ({index, sectionBox, updateSectionBox, updateSectionNumb
         case "button":
         return (wrapperr(
         <StartButton
-            key={index}
             dataKey={index}
             sectionNumber={starterNumber} 
             updateSectionNumber={updateSectionNumber}
