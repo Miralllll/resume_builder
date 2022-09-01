@@ -18,14 +18,14 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                 return;
             }
             var data = allSectionData;
-            if(sectionNumber === 1) {
-                var firstBox = allSectionData[Object.keys(allSectionData)[sectionNumber]][0];
-                console.log(firstBox);
-                var newFirstBox = sectionBoxes[0];
-                // firstBox[firstBox.length() - 2] = newFirstBox[0];
-                // firstBox[firstBox.length() - 1] = newFirstBox[1];
-            }
-            allSectionData[Object.keys(allSectionData)[sectionNumber]] = [firstBox, ...sectionBoxes];
+            // if(sectionNumber === 1) {
+            //     var firstBox = allSectionData[Object.keys(allSectionData)[sectionNumber]][0];
+            //     console.log(firstBox);
+            //     var newFirstBox = sectionBoxes[0];
+            //     // firstBox[firstBox.length() - 2] = newFirstBox[0];
+            //     // firstBox[firstBox.length() - 1] = newFirstBox[1];
+            // }
+            allSectionData[Object.keys(allSectionData)[sectionNumber]] = sectionBoxes;
 
             updateAllSectionData(data);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,6 +53,8 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                     }
                     return (
                     <div key={Object.keys(sectionBoxCurr)[0]} >
+                        {console.log(JSON.stringify(sectionBoxCurr))}
+                        {console.log(Object.keys(sectionBoxCurr)[0])}
                         <SectionBox
                             key={index  + 1}
                             sectionBoxes={sectionBoxes} 
