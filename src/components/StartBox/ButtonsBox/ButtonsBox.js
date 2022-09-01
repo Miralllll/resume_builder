@@ -10,19 +10,19 @@ function ButtonsBox({section_labels, sectionNumber, updateSectionNumber, isPageC
 
     return <Grid container justifyContent="center" alignItems="center" spacing={3} style={({height:"100%"})}>
         <Grid item ys={8} style={({height:"50%"})}>
-            <Grid container justifyContent="center" alignItems="center" style={({height:"100%"})}>
-                <img style={({height:"100%"})}
+            <Grid container justifyContent="center" alignItems="center" style={({height:"auto"})}>
+                <img style={({height:"400px"})}
                     className src={logo} alt="Logo"
                 />
             </Grid>
         </Grid>
         <Grid item ys={8} style={({height:"50%"})}>
-        <Grid container alignItems="center" justifyContent="center" style={({height: "100%"})}> 
-        <Grid item style={({height: "auto"})}>
+        <Grid container alignItems="center" justifyContent="center"> 
+        <Grid item>
         {console.log(section_labels)}
             <Grid container justifyContent="center" spacing={3}>
                 {section_labels.map((value, index, array) => {
-                    return <Grid key={index} item xs={8}>
+                    return <Grid item key={index} xs={8}>
                             <StartButton
                             key={index} 
                             title={value}

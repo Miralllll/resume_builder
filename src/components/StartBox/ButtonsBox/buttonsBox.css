@@ -9,10 +9,14 @@ h4 {
     object-fit: scale-down;
 }
 
-
 .starter-button {
-    width: 100%;
+    min-width: 80%;
     margin: 0 0 !important;
+}
+
+.starter-button > .logo-title{
+    font-size: 1.3rem !important;
+    line-height: 24px;
 }
 
 .starter-next > .logo-title{

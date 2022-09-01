@@ -3,7 +3,7 @@ import StartBox from "../StartBox/StartBox";
 import ButtonsBox from "../StartBox/ButtonsBox/ButtonsBox";
 import formJSON from "../../JSONData/starterFormElements.json";
 import WorkSheet from "../WorkSheet/WorkSheet";
-
+import Profile from "../Profile/Profile";
 
 const StartBoxWrapper = ({sectionNumber, updateSectionNumber}) => {
     const [section, updateSection] = useState(undefined);
@@ -33,9 +33,9 @@ const StartBoxWrapper = ({sectionNumber, updateSectionNumber}) => {
 
 
     return (<>
-                {sectionNumber !== 2 && <>
+                {sectionNumber !== 3 && <>
                 {(sectionNumber === -1) &&
-                <div className="work-sheet">
+                <div className="starter-work-sheet mt-5">
                     <ButtonsBox 
                         key = {sectionNumber}
                         section_labels={[...Object.keys(allSectionData)]} 
@@ -58,8 +58,11 @@ const StartBoxWrapper = ({sectionNumber, updateSectionNumber}) => {
                     ></StartBox>
                     </div>
                 }
+                {(sectionNumber === 2) &&
+                    <Profile sectionNumber={sectionNumber} updateSectionNumber={updateSectionNumber} section_label={section_label}></Profile>
+                }
                 </>}
-                {sectionNumber === 2 && <WorkSheet/>}
+                {sectionNumber === 3 && <WorkSheet/>}
     </>
     );
 };

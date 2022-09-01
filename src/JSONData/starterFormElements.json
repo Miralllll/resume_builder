@@ -1,83 +1,88 @@
 [
-    {
-        "section_label": "Login",
-        "size": 2,
-        "fields": [
-            {
-                "field_id": "email",
-                "field_label": "Email",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Email",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "password",
-                "field_label": "Password",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Password",
-                "field_type": "password",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "1",
-                "field_label": "Login",
-                "field_type": "button",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "2",
-                "field_label": "Sign Up",
-                "field_type": "button",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Sign Up",
-        "size": 3,
-        "fields": [
-            {
-                "field_id": "name",
-                "field_label": "Name",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Name",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "email",
-                "field_label": "Email",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Email",
-                "field_type": "text",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "password",
-                "field_label": "Password",
-                "field_mandatory": "yes",
-                "field_placeholder": "Enter Password",
-                "field_type": "password",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "2",
-                "field_label": "Sign Up",
-                "field_type": "button",
-                "display_full_line": "yes"
-            },
-            {
-                "field_id": "1",
-                "field_label": "Login",
-                "field_type": "button",
-                "display_full_line": "yes"
-            }
-        ]
-    },
-    {
-        "section_label": "Continue As a Guest",
-        "size": 0,
-        "fields": []
-    }
+  {
+    "section_label": "Login",
+    "size": 2,
+    "fields": [
+      {
+        "field_id": "email",
+        "field_label": "Email",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Email",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "password",
+        "field_label": "Password",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Password",
+        "field_type": "password",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "1",
+        "field_label": "Login",
+        "field_type": "button",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "2",
+        "field_label": "Sign Up",
+        "field_type": "button",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Sign Up",
+    "size": 3,
+    "fields": [
+      {
+        "field_id": "name",
+        "field_label": "Name",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Name",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "email",
+        "field_label": "Email",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Email",
+        "field_type": "text",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "password",
+        "field_label": "Password",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter Password",
+        "field_type": "password",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "2",
+        "field_label": "Sign Up",
+        "field_type": "button",
+        "display_full_line": "yes"
+      },
+      {
+        "field_id": "1",
+        "field_label": "Login",
+        "field_type": "button",
+        "display_full_line": "yes"
+      }
+    ]
+  },
+  {
+    "section_label": "Show My Resumes",
+    "size": 0,
+    "fields": []
+  },
+  {
+    "section_label": "Continue As a Guest",
+    "size": 0,
+    "fields": []
+  }
 ]
