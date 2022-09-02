@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import SectionElement from "../SectionElement/SectionElement";
-import LoginButton from "./Buttons/LoginButton";
+import AuthButton from "./Buttons/AuthButton";
 import { Grid } from "@material-ui/core";
 import "./starter.css";
 
@@ -92,22 +92,22 @@ const StarterBoxCont = ({
               }
               items.push(
                 <div key={i + 1} className="row">
-                  <LoginButton
+                  <AuthButton
                     key={i + 1}
                     isAdditional={false}
                     title={"Submit"}
-                  ></LoginButton>
+                  ></AuthButton>
                 </div>
               );
               return items;
             })()}
           </div>
           <div key={1} className="row">
-            <LoginButton
+            <AuthButton
               key={1}
               isAdditional={true}
               title={section_label === "Login" ? "Sign Up" : "Login"}
-            ></LoginButton>
+            ></AuthButton>
           </div>
         </form>
       </div>

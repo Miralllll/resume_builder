@@ -7,7 +7,7 @@ function App() {
   const [sectionNumber, updateSectionNumber] = useState(-1);
   return (
     <div className="App">
-      <NavBar updateSectionNumber={updateSectionNumber}/>
+      <NavBar sectionNumber={sectionNumber} updateSectionNumber={updateSectionNumber}/>
       <StartBoxWrapper sectionNumber={sectionNumber} updateSectionNumber={updateSectionNumber}></StartBoxWrapper>
     </div>
   );

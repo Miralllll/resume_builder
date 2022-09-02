@@ -7,9 +7,9 @@ function Profile({ sectionNumber, updateSectionNumber, section_label }) {
       const res = await fetch(`http://localhost:3040/resumes`, {
         method: "POST",
         credentials: "include",
-        headers: { "Content-Type": "application/json" },
+        // headers: { "Content-Type": "application/json" },
       });
-      const data = res.json();
+      // const data = res.json();
       console.log(res.status);
       // console.log(data);
       if (res.status === 401) {

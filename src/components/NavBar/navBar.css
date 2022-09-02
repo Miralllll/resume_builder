@@ -1,7 +1,7 @@
 .navbar {
   background-color: #ffdf6c;
-  color: black;
-  height: 3.8rem;
+  color: #202020;
+  min-height: 3.8rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   display: flex;
@@ -27,4 +27,17 @@ h3 {
     font-size: 1rem !important;
     line-height: 20px !important;
   }
+}
+
+li{
+  list-style-type: none;
+}
+
+/* nav ul{
+  display: flex;
+  align-items: center;
+} */
+
+nav li{
+  /* margin-left: 20px; */
 }
