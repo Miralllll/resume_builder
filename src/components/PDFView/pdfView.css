@@ -7,7 +7,6 @@
   overflow: hidden;
   background-color: white;
   min-width: 200px;
-
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -19,7 +18,7 @@
   width: 100%;
   position: absolute;
   overflow: hidden;
-  height: 4.0rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,17 +31,17 @@
   right: 0;
   display: flex;
   align-items: center;
-  height: 4.0rem;
+  height: 4rem;
 }
 
-.back-container{
+.back-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1020px) {
   .pdfContainer {
     width: 100% !important;
     display: flex;
@@ -52,7 +51,7 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1020px) {
   .pdfContainer {
     height: 100% !important;
     min-width: 200px !important;
@@ -63,9 +62,9 @@
   width: 100%;
   display: flex;
   background-color: whitesmoke;
-  height: calc(100% - 4.0rem);
+  height: calc(100% - 4rem);
   position: absolute;
-  top: 4.0rem;
+  top: 4rem;
   left: 0;
 }
 
@@ -88,7 +87,7 @@ Page {
 
 .error-latex {
   color: black;
-  padding: 4.0rem;
+  padding: 4rem;
 }
 
 .loading-spinner {
@@ -126,4 +125,3 @@ canvas {
 .document {
   width: 100% !important;
 }
-

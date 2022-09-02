@@ -1,4 +1,5 @@
-.tex-editor, .first-flex {
+.tex-editor,
+.first-flex {
   padding-top: 4px;
   display: flex;
   flex-direction: column;
@@ -8,7 +9,8 @@
   min-width: 200px;
 }
 
-.tex-editor, .first-flex {
+.tex-editor,
+.first-flex {
   width: 100%;
 }
 .tex-editor {
@@ -23,8 +25,9 @@
   left: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .tex-editor, .first-flex {
+@media screen and (max-width: 1020px) {
+  .tex-editor,
+  .first-flex {
     width: 100% !important;
     display: flex;
     flex-direction: column;
@@ -33,8 +36,9 @@
   }
 }
 
-@media screen and (min-width: 600px) {
-  .tex-editor, .first-flex {
+@media screen and (min-width: 1020px) {
+  .tex-editor,
+  .first-flex {
     height: 100% !important;
     min-width: 200px !important;
   }

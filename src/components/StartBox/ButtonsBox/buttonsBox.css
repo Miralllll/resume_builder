@@ -1,44 +1,56 @@
 h4 {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .child-starter-img {
-    display: block;
-    max-width: 380px;
-    width: auto !important;
-    object-fit: scale-down;
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  object-fit: scale-down;
 }
 
 .starter-button {
-    min-width: 80%;
-    margin: 0 0 !important;
+  min-width: 100%;
+  margin: 0 0 !important;
 }
 
-.starter-button > .logo-title{
-    font-size: 1.3rem !important;
-    line-height: 24px;
+.starter-button > .logo-title {
+  font-size: 1.3rem !important;
+  line-height: 24px;
 }
 
-.starter-next > .logo-title{
-    font-size: 1.0rem !important;
-    line-height: 20px;
+.logo-title {
+  font-size: 1.3rem !important;
+  line-height: 24px;
 }
 
 .starter-next {
-    min-width: 100px !important;
+  min-width: 80% !important;
+  margin: 0 0 !important;
 }
-
 
 @media screen and (max-width: 1120px) {
-    .child-starter-img {
-        max-width: 200px !important;
-    }
-    h4 {
-        font-size: calc(0.6rem + .15vw);
-    }
+  .child-starter-img {
+    width: 300px !important;
+  }
+  h4 {
+    font-size: calc(0.6rem + 0.15vw);
+  }
 }
 @media screen and (max-width: 600px) {
-    .starter-button {
-        min-width: 200px;
-    }
+  .child-starter-img,
+  .starter-next,
+  .starter-button {
+    min-width: 300px;
+  }
+}
+
+.loading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+
+.loaded {
+  filter: blur(0px);
+  transition: filter 0.5s linear;
 }

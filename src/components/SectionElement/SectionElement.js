@@ -18,8 +18,13 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             return
         }
         var secCopy = sectionBox;
-        secCopy[field_id] = sectionElem;
-        updateSectionBox(secCopy);
+        if(field_id === -1 || sectionElem === undefined) {
+
+            console.log("here an issue" + field_id + " " + sectionElem);
+        } else {
+            secCopy[field_id] = sectionElem;
+            updateSectionBox(secCopy);
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionElem]);
 
@@ -34,7 +39,7 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
     switch (field_type) {
         case "text":      
         return (
-            // wrapperr(
+            wrapperr(
             <Input
             key = {index}
             field_id={field_id}
@@ -48,11 +53,11 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             isMainPage={isMainPage}
             errors={errors}
         />
-        // )
+        )
         )
         case "password":      
         return (
-            //wrapperr(
+            wrapperr(
             <Input
             key = {index}
             field_id={field_id}
@@ -60,20 +65,18 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             field_placeholder={field_placeholder}
             field_value={val}
             field_type={field_type}
-            // sectionElem={sectionElem}
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
             errors={errors}
         />)
-        // )
+        )
         case "select":
         return (wrapperr(<Select
             field_id={field_id}
             field_label={field_label}
             field_options={field_options}
             field_value={val}
-            // sectionElem={sectionElem} 
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
@@ -83,8 +86,6 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             field_id={field_id}
             field_label={field_label}
             field_value={val}
-            // sectionElem={sectionElem} 
-            // updateSectionElem={updateSectionElem}
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
@@ -97,9 +98,6 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             updateSectionNumber={updateSectionNumber}
             title={field_label}
             isMainPage={isMainPage}
-            // updateStarterNumber={handleClick}
-            // isCurrPageChanged={isChanged}
-            // updateIsPageChanged={updateIsChanged}
         />))
         default:
             return null;

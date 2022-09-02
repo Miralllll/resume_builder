@@ -17,8 +17,8 @@ function StartButton({ title, isAdditional }) {
             style={{
               backgroundColor: `${isAdditional === true ? "#707070" : ""}`,
             }}
-            className={`mi-btn starter-button logo-title ${
-              isAdditional === true ? "" : "starter-next"
+            className={`mi-btn logo-title ${
+              isAdditional === true ? "starter-button" : "starter-next"
             }`}
           >
             <h4 id={`button ${title}`} type="button" className="logo-title">

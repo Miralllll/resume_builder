@@ -31,11 +31,15 @@ const StarterBoxCont = ({
           method: "POST",
           body: JSON.stringify({ email: email, password: password }),
           headers: { "Content-Type": "application/json" },
+          withCredntials: true,
+          credentials: "include",
         });
         const data = await res.json();
         console.log(data);
         if (data.errors) {
           updateErrors(data.errors);
+          console.log(sectionBox);
+          // console.log(sectionBox);
         }
         console.log(errors);
         if (data.user) {
@@ -53,7 +57,7 @@ const StarterBoxCont = ({
     <Grid container style={{ backgroundColor: "transparent" }}>
       <div className="container-second">
         {console.log(errors)}
-        <form onClick={handleChange}>
+        <form onClick={handleChange} autoComplete="none">
           <div className="starter-form">
             <div key={section_label} className=" mb-4 col-12">
               <Grid container justifyContent="center">

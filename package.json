@@ -35,6 +35,7 @@
     "react-loader-spinner": "^5.1.7-beta.1",
     "react-pdf": "^5.7.2",
     "react-perfect-scrollbar": "^1.5.8",
+    "react-progressive-graceful-image": "^0.6.14",
     "react-responsive-picture": "^3.2.2",
     "react-scripts": "^5.0.1",
     "react-split": "^2.0.14",

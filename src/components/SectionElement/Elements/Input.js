@@ -16,7 +16,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
 
 
     return (
-        <div className={`mb-4 ${ display_full_line === "no" ? "col-6" : ""} ${ isMainPage === "no" ? "col-12" : ""}`}>
+        <div className={` ${ display_full_line === "no" ? "col-6" : ""} ${ isMainPage === "no" ? "col-12" : ""}`}>
             
             <label htmlFor={field_label} className="form-label" style={({color: `${ isMainPage === "no" ? "#707070" : ""}`})}>{field_label}</label>
             {field_label !== "Summary" && (isMainPage === "noo" &&
@@ -61,7 +61,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
                 rows={4}
                 />
             )}
-            <div className={`error ${ field_label } `}>{errors !== undefined?errors[`${field_id}`]: ''}</div>
+            <div className={`error ${ field_label } `} style={({display: "inline-block"})}>{errors !== undefined ? (errors[`${field_id}`] !== ''? errors[`${field_id}`]: <span>&nbsp;&nbsp;</span>) : <span>&nbsp;&nbsp;</span>}</div>
         </div>
     );
 };
