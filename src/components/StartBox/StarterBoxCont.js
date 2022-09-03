@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import SectionElement from "../SectionElement/SectionElement";
 import AuthButton from "./Buttons/AuthButton";
 import { Grid } from "@material-ui/core";

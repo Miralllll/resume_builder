@@ -19,9 +19,10 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   const [midJsonRes, updateMidJsonRes] = useState({});
   const [midFile, updateMidFile] = useState("");
   const handler = useFullScreenHandle();
+  
   useEffect(() => {
     handleGenerate();
-  }, []);
+  });
 
   const handleDownload = () => {
     let link = document.createElement("a");
@@ -67,6 +68,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   };
 
 
+  // eslint-disable-next-line no-unused-vars
   function isJsonString(str) {
     try {
         JSON.parse(str);
@@ -75,6 +77,9 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
     }
     return true;
   }
+
+  
+  // eslint-disable-next-line no-unused-vars
   const requestFromJSON = () => {
     fetch('http://localhost:3040/send',{
       body:JSON.stringify(jsonContent),

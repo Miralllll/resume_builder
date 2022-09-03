@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useEffect } from "react";
+import React, { useRef, useState, useCallback } from "react";
 const Input = ({field_id, field_label, field_placeholder, field_value, display_full_line, updateSectionElem, isMainPage, errors}) => {
     const firstUpdate = useRef(null);
     const [val, setValue] = useState("");
@@ -12,6 +12,7 @@ const Input = ({field_id, field_label, field_placeholder, field_value, display_f
     const handleInputChange = useCallback((e) => {
         setValue(e.target.value);
         handleSectionElementChange(e);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [setValue]);
 
 

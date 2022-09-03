@@ -22,6 +22,7 @@ function Button ({title, dataKey, updateSectionNumber, sectionNumber}) {
         if(sectionNumber !== dataKey) {
             setIsActive(false);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionNumber]);
 
     return (

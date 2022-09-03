@@ -14,6 +14,7 @@ const StartBoxWrapper = ({sectionNumber, updateSectionNumber}) => {
         const {section_label} = sec?? {};
         var ls = {...list, [section_label] : {}};
         list = ls;
+        return ls;
     });
     const [allSectionData, updateAllSectionData] = useState(list);
     console.log(sectionNumber + " " + JSON.stringify(allSectionData));

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import ProgressiveImage from "react-progressive-graceful-image";
 import { Grid } from "@material-ui/core";
 import StartButton from "../Buttons/StartButton";

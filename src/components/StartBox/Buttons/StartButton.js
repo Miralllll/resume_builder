@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../../Button/button.css";
-import { Tooltip } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 
 function StartButton({
@@ -12,6 +11,7 @@ function StartButton({
   isPageChanged,
   updateIsPageChanged,
 }) {
+  // eslint-disable-next-line no-unused-vars
   const getIndex = (title) => {
     switch (title) {
       case "Login":
@@ -30,7 +30,7 @@ function StartButton({
   // dataKey = getIndex(title);
 
   const [key] = useState(dataKey);
-  const [isActive, setIsActive] = useState(false);
+  const [, setIsActive] = useState(false);
 
   const handleSectionButton = (dataKey) => {
     setIsActive(true);
@@ -43,6 +43,7 @@ function StartButton({
     if (sectionNumber !== dataKey) {
       setIsActive(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionNumber]);
 
   return (

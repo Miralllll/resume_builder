@@ -36,6 +36,7 @@ function WorkSheet() {
     const { section_label } = sec ?? {};
     var ls = { ...list, [section_label]: [{ 1: {} }] };
     list = ls;
+    return ls;
   });
   const [allSectionData, updateAllSectionData] = useState(list);
   console.log(allSectionData);
