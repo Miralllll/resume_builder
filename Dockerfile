@@ -3,12 +3,12 @@ FROM node:12.18.3
 WORKDIR /app
 
 COPY package.json .
-COPY yarn.lock .
+# COPY yarn.lock .
 
-# RUN npm install
+RUN npm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
