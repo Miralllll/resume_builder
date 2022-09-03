@@ -3,7 +3,7 @@ name: Deploy Backend to heroku.
 # Run workflow on every push to main branch
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 # Your workflow jobs
 jobs:
