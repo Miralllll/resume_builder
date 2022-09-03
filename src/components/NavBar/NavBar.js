@@ -10,7 +10,7 @@ function NavBar({ sectionNumber, updateSectionNumber }) {
   const handleLogOut = async () => {
     console.log("logout");
     try {
-      const res = await fetch(`http://localhost:3040/logout`, {
+      const res = await fetch(`http://localhost:3050/logout`, {
         method: "GET",
         withCredntials: true,
         credentials: "include",

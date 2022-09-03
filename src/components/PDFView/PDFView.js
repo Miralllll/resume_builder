@@ -22,7 +22,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   
   useEffect(() => {
     handleGenerate();
-  });
+  }, []);
 
   const handleDownload = () => {
     let link = document.createElement("a");
@@ -37,7 +37,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
     const content = localStorage.getItem("latestLatex");
     const formData = new FormData();
     formData.append("pdfpdf", Base64.encode(content));
-    var upload = fetch("http://localhost:3040/upload", 
+    var upload = fetch("http://localhost:3050/upload", 
     {
       method: "POST",
       body: formData,
@@ -81,7 +81,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   
   // eslint-disable-next-line no-unused-vars
   const requestFromJSON = () => {
-    fetch('http://localhost:3040/send',{
+    fetch('http://localhost:3050/send',{
       body:JSON.stringify(jsonContent),
       method:'POST',
       headers: {
@@ -117,6 +117,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   const handleGenerate = () => {
     updateIsLoading(true);
     updateIsCompiled(true);
+    console.log("what is going on");
     requestPDF();
     // requestFromJSON();
   };
