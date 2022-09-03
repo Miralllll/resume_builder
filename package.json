@@ -49,10 +49,6 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
-  "engines": {
-    "node": "~6.10.3",
-    "npm": "~5.6.0"
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -70,8 +66,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolutions": {
-    "@types/eslint": "8.4.3"
   }
 }
