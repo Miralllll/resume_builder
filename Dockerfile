@@ -1,12 +1,8 @@
-FROM node:18.7.0
-
-WORKDIR /app
-
-COPY package.json yarn.lock ./
-
-RUN yarn
-COPY . .
-RUN yarn build
-
+FROM node:7 
+WORKDIR /app 
+COPY package.json /app 
+COPY yarn.lock /app
+RUN yarn install 
+COPY . /app 
+CMD npm run develop 
 EXPOSE 3000
-CMD ["yarn", "start"]
