@@ -27,7 +27,7 @@ const StarterBoxCont = ({
       try {
         var lowerCased = section_label.toLowerCase().replace(/ /g, "");
         console.log(lowerCased);
-        const res = await fetch(`http://localhost:3050/${lowerCased}`, {
+        const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/${lowerCased}`, {
           method: "POST",
           body: JSON.stringify({ email: email, password: password }),
           headers: { "Content-Type": "application/json" },

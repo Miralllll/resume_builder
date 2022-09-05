@@ -37,7 +37,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
     const content = localStorage.getItem("latestLatex");
     const formData = new FormData();
     formData.append("pdfpdf", Base64.encode(content));
-    var upload = fetch("http://localhost:3050/upload", 
+    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/upload", 
     {
       method: "POST",
       body: formData,
@@ -81,7 +81,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale}) {
   
   // eslint-disable-next-line no-unused-vars
   const requestFromJSON = () => {
-    fetch('http://localhost:3050/send',{
+    fetch('https://r-esume-b-uilder-api.herokuapp.com/send',{
       body:JSON.stringify(jsonContent),
       method:'POST',
       headers: {

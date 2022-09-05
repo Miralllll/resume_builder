@@ -4,7 +4,7 @@ function Profile({ sectionNumber, updateSectionNumber, section_label }) {
   const doIt = async () => {
     console.log("here");
     try {
-      const res = await fetch(`http://localhost:3050/resumes`, {
+      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/resumes`, {
         method: "POST",
         credentials: "include",
         // headers: { "Content-Type": "application/json" },
