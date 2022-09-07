@@ -36,9 +36,9 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
   const requestPDF = () => {
     const content = localStorage.getItem("latestLatex");
     const formData = new FormData();
-    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/upload", 
     formData.append("file", Base64.encode(content));
     formData.append("form", JSON.stringify(jsonContent));
+    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/upload", {
       method: "POST",
       body: formData,
       credentials: "include",
