@@ -8,11 +8,7 @@ import "./buttonsBox.css";
 const logo = require("./image.png");
 
 function ButtonsBox({
-  section_labels,
-  sectionNumber,
-  updateSectionNumber,
-  isPageChanged,
-  updateIsPageChanged,
+  section_labels
 }) {
   return (
     <Grid container justifyContent="center" alignItems="center" spacing={3}>
@@ -47,9 +43,6 @@ function ButtonsBox({
                     <StartButton
                       key={index}
                       title={value}
-                      dataKey={index}
-                      sectionNumber={sectionNumber}
-                      updateSectionNumber={updateSectionNumber}
                       isMainPage={"yes"}
                     ></StartButton>
                   </Grid>

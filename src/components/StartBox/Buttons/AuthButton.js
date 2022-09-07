@@ -2,14 +2,13 @@ import React from "react";
 import "../../Button/button.css";
 import { Grid } from "@material-ui/core";
 
-function StartButton({ title, isAdditional }) {
+function AuthButton({ title, isAdditional }) {
   return (
     <Grid container justifyContent="center">
       <div
         className={`mb-3 mt-3 ${isAdditional === true ? "col-12" : "col-8"}`}
       >
         <Grid id={`button ${title}`} container justifyContent="center">
-          {/* <Tooltip className={title}> */}
           <button
             id={`button ${title}`}
             type="button"
@@ -25,11 +24,10 @@ function StartButton({ title, isAdditional }) {
               {title}
             </h4>
           </button>
-          {/* </Tooltip> */}
         </Grid>
       </div>
     </Grid>
   );
 }
 
-export default StartButton;
+export default AuthButton;

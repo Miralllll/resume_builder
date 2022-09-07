@@ -1,65 +1,43 @@
 import React, { useState, useEffect } from "react";
 import "../../Button/button.css";
 import { Grid } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 function StartButton({
   title,
-  dataKey,
-  sectionNumber,
-  updateSectionNumber,
-  isMainPage,
-  isPageChanged,
-  updateIsPageChanged,
+  isMainPage
 }) {
   // eslint-disable-next-line no-unused-vars
-  const getIndex = (title) => {
-    switch (title) {
-      case "Login":
-        return 1;
-      case "Sign Up":
-        return 2;
-      case "Continue As a Guest":
-        return 3;
+  const getPropDirection = (url) => {
+    switch (url) {
+      case "login":
+        return "auth/0";
+      case "signup":
+        return "auth/1";
       default:
-        return null;
+        return url;
     }
   };
-
-  console.log("my button id" + dataKey);
 
   // dataKey = getIndex(title);
+  const history = useHistory();
 
-  const [key] = useState(dataKey);
-  const [, setIsActive] = useState(false);
-
-  const handleSectionButton = (dataKey) => {
-    setIsActive(true);
-    updateSectionNumber(dataKey);
-    console.log("my button id" + dataKey);
-    // updateSectionNumber(dataKey);
+  const handleSectionButton = () => {
+    var direction = title.toLowerCase().split(" ").splice(-2).join("");
+    history.push(`/${getPropDirection(direction)}`);
   };
-
-  useEffect(() => {
-    if (sectionNumber !== dataKey) {
-      setIsActive(false);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sectionNumber]);
 
   return (
     <div className={`mt-3 ${isMainPage === "yes" ? "col-12" : "mb-3 col-8"}`}>
-      {console.log(dataKey)}
       <Grid container justifyContent="center">
-        {/* <Tooltip className={title}> */}
         <button
           className={`mi-btn starter-button logo-title ${
             isMainPage === "yes" ? "" : "starter-next"
           }`}
-          onClick={() => handleSectionButton(key)}
+          onClick={() => handleSectionButton()}
         >
           <h4 className="logo-title">{title}</h4>
         </button>
-        {/* </Tooltip> */}
       </Grid>
     </div>
   );

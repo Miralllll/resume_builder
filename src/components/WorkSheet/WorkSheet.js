@@ -10,9 +10,11 @@ import { Grid } from "@material-ui/core";
 import formJSON from "../../JSONData/formElement.json";
 import Section from "../Section/Section";
 import ScrollBars from "react-custom-scrollbars";
+import { Switch, Route } from "react-router-dom";
 const { templete1 } = require("../../Data/templete1");
 
 function WorkSheet() {
+
   React.useState({
     width: window.innerWidth,
   });
@@ -83,18 +85,19 @@ function WorkSheet() {
         updateSectionNumber={updateSectionNumber}
         sectionNumber={sectionNumber}
       >
-        {" "}
-      </ResumeBar>
+      </ResumeBar> 
       <Split
+
+      
         className="card-wrapper"
         sizes={splitSize}
         expandToMin={true}
         gutterAlign="center"
         direction={direction}
-        // minSize={direction === "horizontal" ? 400 : 100}
+        // minSize={direction === "horizontal" ? 400 : 100} 
       >
         <ScrollBars className="first-flex scroll">
-          {sectionNumber === -1 && (
+           {sectionNumber === -1 && (
             <Editor
               className="w-full h-full md:h-screen"
               updateIsCompiled={updateIsCompiled}
@@ -102,7 +105,7 @@ function WorkSheet() {
               content={latexContent}
               changeContent={updateLatexContent}
             />
-          )}
+          )} 
           {sectionNumber !== -1 && (
             <div
               key={(sectionNumber) => {
@@ -125,8 +128,7 @@ function WorkSheet() {
               ></Section>
             </div>
           )}
-        </ScrollBars>
-        {/* <div className="w-full h-full md:h-screen" ></div> */}
+        </ScrollBars> 
         <PDFView
           className="w-full h-full md:h-screen"
           content={latexContent}
@@ -134,8 +136,9 @@ function WorkSheet() {
           updateIsCompiled={updateIsCompiled}
           scale={pdfScale}
         />
-      </Split>
+      </Split> 
     </div>
+    
   );
 }
 

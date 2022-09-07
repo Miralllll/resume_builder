@@ -65,7 +65,7 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                             actualIndex={Object.keys(sectionBoxCurr)[0]}
                         >
                         </SectionBox>
-                        <PlusButton
+                        {/* <PlusButton
                             sectionBoxes={sectionBoxes} 
                             updateSectionBoxes={updateSectionBoxes}
                             removePressed = {removePressed} 
@@ -74,20 +74,21 @@ const Section = ({allSectionData, updateAllSectionData, sectionNumber, fields, s
                             isZero={false}
                             index={index + 1}
                             actualIndex={Object.keys(sectionBoxCurr)[0]}
-                        />
+                        /> */}
                     </div>
                     );
                 }
                     ) :
                     <div key={0}>
-                        <PlusButton
+                        {/* <PlusButton
                         sectionBoxes={sectionBoxes}
                         updateSectionBoxes={updateSectionBoxes}
                         isLast={true}
                         isZero={true}
                         index={0}
                         actualIndex={0}
-                    /></div>
+                    /> */}
+                    </div>
                 }
             </div>
             

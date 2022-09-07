@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import SectionElement from "../SectionElement/SectionElement";
 import AuthButton from "./Buttons/AuthButton";
 import { Grid } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import "./starter.css";
 
 const StarterBoxCont = ({
-  sectionNumber,
-  updateSectionNumber,
   sectionInfo,
   fields,
   size,
@@ -14,20 +13,19 @@ const StarterBoxCont = ({
 }) => {
   const [sectionBox, updateSectionBox] = new useState(sectionInfo);
   const [errors, updateErrors] = useState({ email: "", password: "" });
-
+  const history = useHistory();
   const handleChange = async (e) => {
     if (e.target.id === "button Submit") {
       var errs = errors;
       errs.email = "";
       errs.password = "";
       updateErrors(errs);
-      console.log(sectionNumber);
       const email = sectionBox.email;
       const password = sectionBox.password;
       try {
         var lowerCased = section_label.toLowerCase().replace(/ /g, "");
         console.log(lowerCased);
-        const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/${lowerCased}`, {
+        const res = await fetch(`http://localhost:3050/${lowerCased}`, {
           method: "POST",
           body: JSON.stringify({ email: email, password: password }),
           headers: { "Content-Type": "application/json" },
@@ -44,12 +42,13 @@ const StarterBoxCont = ({
         console.log(errors);
         if (data.user) {
           // relocation on main page to login
+          history.push("/myresumes");
         }
       } catch (err) {
         console.log(err);
       }
     } else if (e.target.id.startsWith("button")) {
-      updateSectionNumber(sectionNumber === 1 ? 0 : 1);
+      history.push(`/auth/${section_label === "Login" ? 1 : 0}`)
     }
   };
 
@@ -78,8 +77,6 @@ const StarterBoxCont = ({
                     updateSectionBox={updateSectionBox}
                     field={fields[i]}
                     isMainPage={"no"}
-                    starterNumber={sectionNumber}
-                    updateSectionNumber={updateSectionNumber}
                     errors={errors}
                     updateErrors={updateErrors}
                   />

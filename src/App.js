@@ -1,15 +1,17 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import StartBoxWrapper from './components/StartBox/StartBoxWrapper';
-import React, {useState} from "react";
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import StartBoxWrapper from "./components/StartBox/StartBoxWrapper";
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  const [sectionNumber, updateSectionNumber] = useState(-1);
   return (
-    <div className="App">
-      <NavBar sectionNumber={sectionNumber} updateSectionNumber={updateSectionNumber}/>
-      <StartBoxWrapper sectionNumber={sectionNumber} updateSectionNumber={updateSectionNumber}></StartBoxWrapper>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <StartBoxWrapper></StartBoxWrapper>
+      </div>
+    </Router>
   );
 }
 

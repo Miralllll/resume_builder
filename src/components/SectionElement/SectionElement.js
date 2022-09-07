@@ -5,7 +5,7 @@ import DatePickerLCL from "./Elements/DatePicker";
 import StartButton from "../StartBox/Buttons/StartButton";
 import { Grid  } from '@material-ui/core';
 
-function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSectionNumber, field: {field_type, field_id, field_label, field_placeholder, field_options, display_full_line}, isMainPage, starterNumber}) {
+function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSectionNumber, field: {field_type, field_id, field_label, field_placeholder, field_options, display_full_line}, isMainPage}) {
     const { [field_id]: vl } = sectionBox;
     const val = vl;
     const [sectionElem, updateSectionElem] = useState(val);
@@ -82,20 +82,22 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
             isMainPage={isMainPage}
         />))
         case "date":
-        return (wrapperr(<DatePickerLCL
+        return (
+            wrapperr(
+            <DatePickerLCL
             field_id={field_id}
             field_label={field_label}
             field_value={val}
             display_full_line={display_full_line}
             updateSectionElem={updateSectionElem}
             isMainPage={isMainPage}
-        />))
+        />
+        )
+        )
         case "button":
         return (wrapperr(
         <StartButton
             dataKey={index}
-            sectionNumber={starterNumber} 
-            updateSectionNumber={updateSectionNumber}
             title={field_label}
             isMainPage={isMainPage}
         />))

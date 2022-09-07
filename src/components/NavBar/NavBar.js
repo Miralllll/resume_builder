@@ -1,59 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./navBar.css";
 import { Grid } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from '@material-ui/core/styles';
 
-function NavBar({ sectionNumber, updateSectionNumber }) {
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: "#ffdf6c",
+    color: "#202020",
+  },
+}));
+
+function NavBar() {
+  const history = useHistory();
+  const classes = useStyles();
+
   const goOnMainPage = () => {
-    updateSectionNumber(-1);
-  };
-
-  const handleLogOut = async () => {
-    console.log("logout");
-    try {
-      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/logout`, {
-        method: "GET",
-        withCredntials: true,
-        credentials: "include",
-      });
-      console.log("here" + res.status);
-      if (res.status === 200) {
-        updateSectionNumber(-1);
-      } else console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+    history.push(`/`);
   };
 
   return (
-    <nav className="navbar">
-      <div>
-        <li>
-          <Grid container justifyContent="center" onClick={goOnMainPage}>
-            <div>
-              <h3 className="logo-title">&nbsp;| RESUME | BUILDER |</h3>
-            </div>
-          </Grid>
-        </li>
-      </div>
-      {sectionNumber === 2 && (
-        <div>
-          <li>
-            <Grid id={`button `} container justifyContent="center">
-              <button
-                id={`button `}
-                type="button"
-                className={`mi-btn`}
-                onClick={handleLogOut}
-              >
-                <h4 id={`button Log Out`} type="button" className="logo-title">
-                  Log Out
-                </h4>
-              </button>
-            </Grid>
-          </li>
-        </div>
-      )}
-    </nav>
+    <AppBar className={classes.appBar} position="static" onClick={goOnMainPage}>
+      <Toolbar>
+        <Typography variant="h5" onClick={goOnMainPage}>
+          &nbsp;| RESUME | BUILDER |
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }
 
