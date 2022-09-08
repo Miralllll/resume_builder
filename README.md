@@ -1,4 +1,4 @@
-My project is the resume builder, which offers this service by filling out diverse forms 
+&nbsp; My project is the resume builder, which offers this service by filling out diverse forms 
 or modifying the latex of the resume template. The main idea is that it has to help users to 
 build a resume with flexible questionaries represented as forms. To be more specific, users will 
 have the power to decide, for instance, in the work experience section, how many experiences 
@@ -7,7 +7,7 @@ user changes their mind and wants to delete a section element from all the jobs,
 anytime by clicking the minus button. Additionally, based on any filled-out information or 
 the latex, a user can display the generated pdf on the right side of the website by clicking the 
 run button.<br />
-Looking for a job is a very tiring and nonstop process nowadays. Choosing the 
+&nbsp; Looking for a job is a very tiring and nonstop process nowadays. Choosing the 
 right employers also demands plenty of exertion. Overall, we see that the possibility of 
 connecting back to the candidates and scheduling interviews is becoming more and more 
 dependent on the quality of their resumes. Therefore, the trend and their desire to find a 
@@ -35,7 +35,9 @@ access the main functionality. They can build a resume with a default template. 
 authorized users can save the resumes and update them later. They can create as many resumes 
 as they want. Additionally, authorized ones can create a new template with the specifically 
 picked template they chose.
-
+<br />
+<br />
+<br />
 
 
 
