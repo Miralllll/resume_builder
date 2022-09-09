@@ -169,7 +169,7 @@ function Profile({ url }) {
 
   const handleLogOut = async () => {
     try {
-      const res = await fetch(`http://localhost:3050/logout`, {
+      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/logout`, {
         method: "GET",
         withCredntials: true,
         credentials: "include",
