@@ -140,7 +140,7 @@ function Profile({ url }) {
 
   const deleteResumes = async () => {
     try {
-      const res = await fetch(`http://localhost:3050/resumes/delete`, {
+      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/resumes/delete`, {
         method: "POST",
         credentials: "include",
         body: JSON.stringify({
@@ -186,7 +186,7 @@ function Profile({ url }) {
     <>
       {isAuth && (
         <div>
-          {/* <li>
+          <li>
             <Grid id={`button `} container justifyContent="center">
               <button
                 id={`button `}
@@ -199,7 +199,7 @@ function Profile({ url }) {
                 </h4>
               </button>
             </Grid>
-          </li> */}
+          </li>
           {/* {!isLoading && ( */}
           <>
             <Box className={classes.welcomeCont}>

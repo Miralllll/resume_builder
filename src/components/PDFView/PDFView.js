@@ -42,7 +42,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
     formData.append("file", Base64.encode(content));
     formData.append("form", JSON.stringify(jsonContent));
     formData.append("title", title);
-    var upload = fetch("http://localhost:3050/upload", {
+    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/upload", {
       method: "POST",
       body: formData,
       credentials: "include",

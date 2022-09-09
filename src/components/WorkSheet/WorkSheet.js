@@ -29,7 +29,7 @@ function WorkSheet() {
 
   const getResume = async (title) => {
     try {
-      const res = await fetch(`http://localhost:3050/resumes/get`, {
+      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/resumes/get`, {
         method: "POST",
         credentials: "include",
         body: JSON.stringify({

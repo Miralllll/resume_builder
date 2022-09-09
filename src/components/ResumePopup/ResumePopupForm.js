@@ -28,7 +28,7 @@ export default function ResumePopupForm() {
 
   const createResume = async () => {
     try {
-      const res = await fetch(`http://localhost:3050/resumes/add`, {
+      const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/resumes/add`, {
         method: "POST",
         credentials: "include",
         body: JSON.stringify({
