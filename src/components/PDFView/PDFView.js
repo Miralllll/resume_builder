@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { CgSoftwareDownload } from "react-icons/cg";
 import { MdLoop } from "react-icons/md";
 import { Tooltip } from "@material-ui/core";
@@ -8,14 +8,17 @@ import Spinner from "../Spinner/Spinner";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Grid } from "@material-ui/core";
+import { useParams } from "react-router-dom";
 import "./pdfView.css";
 import "../Button/button.css";
 // PDF viewer to display pdf not in localy
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
+  const { title } = useParams();
   const [isLoading, updateIsLoading] = useState(false);
   const [midJsonRes, updateMidJsonRes] = useState({});
+  const [numPages, setNumPages] = useState(null);
   const [midFile, updateMidFile] = useState("");
   const handler = useFullScreenHandle();
 
@@ -33,12 +36,13 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
   const handleFullScreen = () =>
     handler.active ? handler.exit() : handler.enter();
 
-  const requestPDF = () => {
-    const content = localStorage.getItem("latestLatex");
+  const requestPDF = async () => {
+    // const content = localStorage.getItem("latestLatex");
     const formData = new FormData();
     formData.append("file", Base64.encode(content));
     formData.append("form", JSON.stringify(jsonContent));
-    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/upload", {
+    formData.append("title", title);
+    var upload = fetch("http://localhost:3050/upload", {
       method: "POST",
       body: formData,
       credentials: "include",
@@ -71,12 +75,15 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
   const handleGenerate = () => {
     updateIsLoading(true);
     updateIsCompiled(true);
-    console.log("what is going on");
     requestPDF();
   };
 
+  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
+    setNumPages(nextNumPages);
+  }
+
   return (
-    <div className="pdfContainer scroll">
+    <>
       <div className="pdf">
         <div className="pdf-buttons-container">
           <Tooltip title="GENERATE">
@@ -119,7 +126,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
                     }}
                   >
                     {handler.active && (
-                      <Grid container justify="flex-end">
+                      <Grid container justifyContent="flex-end">
                         <button
                           onClick={handler.exit}
                           className="mi-btn exit-button"
@@ -137,16 +144,20 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
                     className={`document ${
                       handler.active ? "view-fullscreen-document" : ""
                     }`}
+                    onLoadSuccess={onDocumentLoadSuccess}
                   >
-                    <Page
-                      renderTextLayer={false}
-                      key={`page`}
-                      pageNumber={1}
-                      scale={scale}
-                      className="page"
-                      width={1300}
-                      height={1300}
-                    />
+                    {Array.from(new Array(numPages), (el, index) => (
+                      <Page
+                        renderTextLayer={false}
+                        key={`page_${index + 1}`}
+                        pageNumber={index + 1}
+                        scale={scale}
+                        className="page"
+                        width={1300}
+                        height={1300}
+                        id="pdf-canvas"
+                      />
+                    ))}
                   </Document>
                 </div>
               );
@@ -154,7 +165,7 @@ function PDFView({ content, jsonContent, updateIsCompiled, scale }) {
         </div>
         {/* </div> */}
       </FullScreen>
-    </div>
+    </>
   );
 }
 

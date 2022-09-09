@@ -11,7 +11,7 @@ function Editor({ content, changeContent, isCompiled, updateIsCompiled}) {
   const editorRef = useRef(null);
 
   useEffect(() => {
-    console.log(content);
+    // console.log(content);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCompiled]);
 

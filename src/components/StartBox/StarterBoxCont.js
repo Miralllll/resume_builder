@@ -12,34 +12,31 @@ const StarterBoxCont = ({
   section_label,
 }) => {
   const [sectionBox, updateSectionBox] = new useState(sectionInfo);
-  const [errors, updateErrors] = useState({ email: "", password: "" });
+  const [errors, updateErrors] = useState({ email: "", password: "", name: "" });
   const history = useHistory();
   const handleChange = async (e) => {
     if (e.target.id === "button Submit") {
       var errs = errors;
       errs.email = "";
       errs.password = "";
+      errs.name = "";
       updateErrors(errs);
       const email = sectionBox.email;
       const password = sectionBox.password;
+      const name = sectionBox.name;
       try {
         var lowerCased = section_label.toLowerCase().replace(/ /g, "");
-        console.log(lowerCased);
-        const res = await fetch(`https://r-esume-b-uilder-api.herokuapp.com/${lowerCased}`, {
+        const res = await fetch(`http://localhost:3050/${lowerCased}`, {
           method: "POST",
-          body: JSON.stringify({ email: email, password: password }),
-          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, password: password, name: name }),
+          headers: { "Content-Type": "application/json"},
           withCredntials: true,
           credentials: "include",
         });
         const data = await res.json();
-        console.log(data);
         if (data.errors) {
           updateErrors(data.errors);
-          console.log(sectionBox);
-          // console.log(sectionBox);
         }
-        console.log(errors);
         if (data.user) {
           // relocation on main page to login
           history.push("/myresumes");
@@ -55,7 +52,6 @@ const StarterBoxCont = ({
   return (
     <Grid container style={{ backgroundColor: "transparent" }}>
       <div className="container-second">
-        {console.log(errors)}
         <form onClick={handleChange} autoComplete="none">
           <div className="starter-form">
             <div key={section_label} className=" mb-4 col-12">

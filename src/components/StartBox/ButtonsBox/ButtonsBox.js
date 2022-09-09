@@ -35,7 +35,6 @@ function ButtonsBox({
       <Grid item ys={9} sm={7} md={6} lg={6} xl={6}>
         <Grid container alignItems="center" justifyContent="center">
           <Grid item>
-            {console.log(section_labels)}
             <Grid container justifyContent="center" spacing={3}>
               {section_labels.map((value, index, array) => {
                 return (

@@ -1,4 +1,4 @@
-.MuiInputBase-input, .MuiSvgIcon-root {
+.date-picker .MuiInputBase-input , .date-picker .MuiSvgIcon-root  {
     color: white !important;
 }
 

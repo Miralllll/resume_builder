@@ -20,7 +20,6 @@ function SectionElement ({index, sectionBox, errors, updateSectionBox, updateSec
         var secCopy = sectionBox;
         if(field_id === -1 || sectionElem === undefined) {
 
-            console.log("here an issue" + field_id + " " + sectionElem);
         } else {
             secCopy[field_id] = sectionElem;
             updateSectionBox(secCopy);

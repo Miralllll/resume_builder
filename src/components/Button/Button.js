@@ -12,14 +12,11 @@ import { Tooltip } from "@material-ui/core";
 function Button ({title, dataKey, updateSectionNumber, sectionNumber}) {
     const [key, ] = useState(dataKey);
     const [isActive, setIsActive] = useState(sectionNumber === dataKey? true:false);
-    console.log("sectionnumber is " + sectionNumber);
 
     const handleSectionButton = (dataKey) => {
-        console.log(dataKey + " " + isActive + " " + key);
         // if(isActive === false) return;
         setIsActive(true);
         updateSectionNumber(dataKey);
-        console.log("sectionnumber is handle " +sectionNumber);
     };
 
     useEffect(() => {

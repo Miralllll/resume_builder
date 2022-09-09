@@ -12,13 +12,6 @@ const SectionBox = ({
   const [sectionBox, updateSectionBox] = new useState(
     sectionBoxes[index][actualIndex]
   );
-  console.log(
-    JSON.stringify(sectionBoxes[index][actualIndex]) +
-      " " +
-      index +
-      " " +
-      actualIndex
-  );
   const firstUpdate = useRef(true);
 
   useEffect(() => {

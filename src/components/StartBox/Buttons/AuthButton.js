@@ -2,7 +2,7 @@ import React from "react";
 import "../../Button/button.css";
 import { Grid } from "@material-ui/core";
 
-function AuthButton({ title, isAdditional }) {
+function AuthButton({ title, isAdditional, typeBT }) {
   return (
     <Grid container justifyContent="center">
       <div
@@ -11,7 +11,7 @@ function AuthButton({ title, isAdditional }) {
         <Grid id={`button ${title}`} container justifyContent="center">
           <button
             id={`button ${title}`}
-            type="button"
+            type={typeBT? typeBT : "button"}
             style={{
               backgroundColor: `${isAdditional === true ? "#707070" : ""}`,
               color: `${isAdditional === true ? "#ffffff" : ""}`,

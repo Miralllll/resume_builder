@@ -8,10 +8,8 @@ function PlusButton ({sectionBoxes, updateSectionBoxes, removePressed, updateRem
     const handleAdd = () => {
         var indStr = "" + (Number(actualIndex) + 1);
         var objCurr = { [indStr]: {}};
-        console.log(JSON.stringify(objCurr));
         var sectionBoxesCrr = [...sectionBoxes];
         sectionBoxesCrr.push(objCurr);
-        console.log(JSON.stringify(sectionBoxesCrr));
         updateSectionBoxes(sectionBoxesCrr);
     };
 

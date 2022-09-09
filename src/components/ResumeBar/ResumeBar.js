@@ -2,7 +2,6 @@ import "./resumeBar.css";
 import "../Button/button.css";
 import Button from "../Button/Button.js";
 function ResumeBar({ updateSectionNumber, sectionNumber }) {
-  console.log(sectionNumber);
   return (
     <div className="resume-bar">
       <Button

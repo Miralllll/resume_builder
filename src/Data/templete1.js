@@ -14,6 +14,17 @@ const templete1 = `
     \\raggedright
 
 
+% The beginning of the variable list
+
+% From here to the next the end of the list you can see all the %
+% that are used in this resume templete. %
+% You have a freedom to modify the values of variables from here if you wish %
+% or from the form that is offerred by this website. %
+% If you will new variables different from those that we offered, you need %
+% to insert their values from here (forms can not offer you that yet) %
+
+
+
 \\expandafter\\newcommand\\csname english_name\\endcsname[1]{Mariam Samkharadze}
 \\newcommand{\\headline}{BCs in Computer Science}
 \\newcommand{\\email}{msamk18@freeuni.edu.ge}
@@ -29,7 +40,7 @@ const templete1 = `
 \\expandafter\\newcommand\\csname work_summary\\endcsname[1]{
     \\item Worked with an agile product team,
     designed data modeling processes to create algorithms
-    and predictive models, to perform custom analysis.\\\\
+    and predictive models, to perform custom.\\\\
     \\item Analyzed and trained a Minimal Balance Propensity and a
     Loan Propensity models.\\\\
     \\item Used technologies and concepts: Python, pandas, scikit-learn, R, XGBoost, Catboost, etc.\\\\
@@ -47,6 +58,8 @@ const templete1 = `
 \\expandafter\\newcommand\\csname skill_name\\endcsname[1]{Programming Language:    & Javascript, Python, C++, R, PHP, Bash, HTML5, CSS3}
 \\expandafter\\newcommand\\csname skill_level\\endcsname[1]{}
 
+
+% The end of variables
 
 \\def\\bull{\\vrule height 0.8ex width .7ex depth -.1ex }
 

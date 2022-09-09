@@ -23,7 +23,6 @@ const StartBoxWrapper = () => {
           </div>
         </Route>
         <Route path="/auth/:id">
-          {console.log("inside log")}
           <StartBox></StartBox>
         </Route>
         <Route
@@ -34,7 +33,7 @@ const StartBoxWrapper = () => {
             </>
           )}
         />
-        <Route path="/aguest">
+        <Route path="/creator/:title">
           <WorkSheet />
         </Route>
       </Switch>

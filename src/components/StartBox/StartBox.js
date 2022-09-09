@@ -6,11 +6,11 @@ import formJSON from "../../JSONData/starterFormElements.json";
 
 function StartBox() {
   const { id } = useParams();
-  console.log(id);
   const { fields, section_label, size } = formJSON[id] ?? {};
   const [sectionInfo, updateSectionInfo] = useState({
     email: "",
     password: "",
+    name: ""
   });
   var fieldsCopy = fields;
   var sizeCopy = size;
