@@ -100,7 +100,7 @@ function WorkSheet() {
     formData.append("file", Base64.encode(latexContent));
     formData.append("form", JSON.stringify(allSectionData));
     formData.append("title", title);
-    var upload = fetch("http://localhost:3050/creator/getlatex", {
+    var upload = fetch("https://r-esume-b-uilder-api.herokuapp.com/creator/getlatex", {
       method: "POST",
       body: formData,
       credentials: "include",

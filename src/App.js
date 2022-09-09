@@ -5,11 +5,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+  const [isAuth, updateIsAuth] = useState(false);
   return (
     <Router>
       <div className="App">
-        <NavBar />
-        <StartBoxWrapper></StartBoxWrapper>
+        <NavBar isAuth={isAuth}/>
+        <StartBoxWrapper isAuth={isAuth} updateIsAuth={updateIsAuth}></StartBoxWrapper>
       </div>
     </Router>
   );

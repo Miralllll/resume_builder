@@ -6,7 +6,7 @@ import WorkSheet from "../WorkSheet/WorkSheet";
 import Profile from "../Profile/Profile";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-const StartBoxWrapper = () => {
+const StartBoxWrapper = ({isAuth, updateIsAuth}) => {
   var list = [];
   formJSON.map((sec) => {
     const { section_label } = sec ?? {};
@@ -29,7 +29,7 @@ const StartBoxWrapper = () => {
           path="/myresumes"
           render={({ match: { url } }) => (
             <>
-              <Profile url={url}></Profile>
+              <Profile url={url} isAuth={isAuth} updateIsAuth={updateIsAuth}></Profile>
             </>
           )}
         />

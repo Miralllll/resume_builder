@@ -80,10 +80,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Profile({ url }) {
+function Profile({ isAuth, updateIsAuth }) {
   const classes = useStyles();
   const history = useHistory();
-  const [isAuth, updateIsAuth] = useState(false);
+  const [isAuthh, updateIsAuthh] = useState(false);
   const [isLoading, updateIsLoading] = useState(true);
   const [profileData, updateProfileData] = useState({});
   const [removePressed, updateRemovePressed] = useState([false, -1]);
@@ -110,7 +110,7 @@ function Profile({ url }) {
       updateRemovePressed(false);
     } catch  (err) {
       console.log(err);
-      updateIsAuth(false);
+      updateIsAuthh(false);
       updateIsLoading(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -129,11 +129,12 @@ function Profile({ url }) {
         const data = await res.json();
         updateProfileData(data);
         updateIsLoading(false);
+        updateIsAuthh(true);
         updateIsAuth(true);
       }
     } catch (err) {
       console.log(err);
-      updateIsAuth(false);
+      updateIsAuthh(false);
       updateIsLoading(false);
     }
   };
@@ -184,23 +185,8 @@ function Profile({ url }) {
 
   return (
     <>
-      {isAuth && (
+      {isAuthh && (
         <div>
-          <li>
-            <Grid id={`button `} container justifyContent="center">
-              <button
-                id={`button `}
-                type="button"
-                className={`mi-btn`}
-                onClick={handleLogOut}
-              >
-                <h4 id={`button Log Out`} type="button" className="logo-title">
-                  Log Out
-                </h4>
-              </button>
-            </Grid>
-          </li>
-          {/* {!isLoading && ( */}
           <>
             <Box className={classes.welcomeCont}>
               {!isLoading && (
